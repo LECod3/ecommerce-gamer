@@ -1,0 +1,1 @@
+//* aqui van las funciones para todo el CRUD de los juegos 
