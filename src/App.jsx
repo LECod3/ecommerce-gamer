@@ -1,14 +1,35 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AdminPage from "./pages/AdminPage";
 import AboutPage from "./pages/AboutPage";
 import GameDetailPage from "./pages/GameDetailPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import Navbar from "./components/Navbar";
+import ModalLogin from "./components/ModalLogin";
+import ModalRegister from "./components/ModalRegister";
 
 function App() {
+  const [showRegister, setShowRegister] = useState(false);
+  const handleShowRegister = () => setShowRegister(true);
+  const handleCloseRegister = () => setShowRegister(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const handleShowLogin = () => setShowLogin(true);
+  const handleCloseLogin = () => setShowLogin(false);
+  const handleSwitchToRegister = () => {
+    handleCloseLogin();
+    handleShowRegister();
+  };
+  const handleSwitchToLogin = () => {
+    handleCloseRegister();
+    handleShowLogin();
+  };
   return (
     <div className="container">
-      {/* Aquí irá el Navbar */}
+      <Navbar
+        onLoginClick={handleShowLogin}
+        onRegisterClick={handleShowRegister}
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminPage />} />
@@ -16,7 +37,16 @@ function App() {
         <Route path="/game/:id" element={<GameDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      {/* Aquí irá el Footer */}
+      <ModalLogin
+        show={showLogin}
+        handleClose={handleCloseLogin}
+        handleSwitchToRegister={handleSwitchToRegister}
+      />
+      <ModalRegister
+        show={showRegister}
+        handleClose={handleCloseRegister}
+        handleSwitchToLogin={handleSwitchToLogin}
+      />
     </div>
   );
 }

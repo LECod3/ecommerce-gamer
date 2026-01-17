@@ -3,14 +3,18 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
-const ModalLogin = ({ show, handleClose, handleSwitchToRegister }) => {
+const ModalRegister = ({ show, handleClose, handleSwitchToLogin }) => {
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton className="border-0">
-        <Modal.Title className="w-100 text-center">INICIAR SESIÓN</Modal.Title>
+        <Modal.Title className="w-100 text-center">REGISTRARSE</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
+          <Form.Group className="mb-3" controlId="formBasicUsername">
+            <Form.Control type="text" placeholder="Nombre de usuario" />
+          </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Control type="email" placeholder="Correo electrónico" />
           </Form.Group>
@@ -19,12 +23,27 @@ const ModalLogin = ({ show, handleClose, handleSwitchToRegister }) => {
             <Form.Control type="password" placeholder="Contraseña" />
           </Form.Group>
 
+          <div
+            className="text-muted mb-3 text-center"
+            style={{ fontSize: "0.8rem" }}
+          >
+            Al registrarse, confirma que tiene 16 años o más y acepta nuestro{" "}
+            <a href="#" className="text-decoration-none">
+              Acuerdo de Usuario
+            </a>{" "}
+            y{" "}
+            <a href="#" className="text-decoration-none">
+              Política de Privacidad
+            </a>
+            .
+          </div>
+
           <Button
             variant="success"
             type="submit"
             className="w-100 mb-3 text-uppercase fw-bold"
           >
-            Iniciar Sesión
+            Registrarse Ahora
           </Button>
 
           <div className="text-center mb-3">
@@ -41,18 +60,15 @@ const ModalLogin = ({ show, handleClose, handleSwitchToRegister }) => {
           </div>
         </Form>
       </Modal.Body>
-      <Modal.Footer className="border-0 justify-content-center flex-column">
-        <Button variant="link" className="text-decoration-none text-secondary">
-          ¿Olvidaste tu contraseña?
-        </Button>
+      <Modal.Footer className="border-0 justify-content-center">
         <div className="text-muted">
-          ¿No tienes cuenta?{" "}
+          ¿Ya tienes una cuenta?{" "}
           <Button
             variant="link"
             className="text-decoration-none p-0"
-            onClick={handleSwitchToRegister}
+            onClick={handleSwitchToLogin}
           >
-            Regístrate aquí
+            Inicia sesión en tu cuenta
           </Button>
         </div>
       </Modal.Footer>
@@ -60,4 +76,4 @@ const ModalLogin = ({ show, handleClose, handleSwitchToRegister }) => {
   );
 };
 
-export default ModalLogin;
+export default ModalRegister;
