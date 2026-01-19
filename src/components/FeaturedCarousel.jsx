@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import GameCard from "./GameCard";
+//import GameCard from "./GameCard";
 
 const FeaturedCarousel = ({ games }) => {
     return (
