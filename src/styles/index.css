@@ -21,7 +21,6 @@ code {
     monospace;
 }
 
-/* Ajustes para Bootstrap en modo oscuro si no usas el tema nativo */
 .card {
   background-color: var(--secondary-bg);
   color: var(--text-color);
@@ -30,22 +29,22 @@ code {
 
 /* Navbar Custom Styles */
 .navbar-nav .nav-link {
-  color: #adb5bd !important; /* Gris */
+  color: #adb5bd !important; 
   transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ffffff !important; /* Blanco al pasar el mouse */
+  color: #ffffff !important;
 }
 
 .btn-auth {
-  background-color: #4b0082 !important; /* Violeta oscuro */
+  background-color: #4b0082 !important; 
   color: white !important;
   border: none !important;
   margin-left: 10px;
 }
 
 .btn-auth:hover {
-  background-color: #6a0dad !important; /* Violeta un poco más claro al hover */
+  background-color: #6a0dad !important; 
   color: white !important;
 }
