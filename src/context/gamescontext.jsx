@@ -1,5 +1,6 @@
 //* aqui van las funciones para todo el CRUD de los juegos
 import { createContext, useState } from "react";
+// eslint-disable-next-line react-refresh/only-export-components
 export const GamesContext = createContext();
 export const GamesContextProvider = ({ children }) => {
   const [games, setGames] = useState([

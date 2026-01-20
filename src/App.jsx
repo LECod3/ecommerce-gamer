@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AdminPage from "./pages/AdminPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 import AboutPage from "./pages/AboutPage";
 import GameDetailPage from "./pages/GameDetailPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -32,7 +33,14 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<AdminPage />} />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/game/:id" element={<GameDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
