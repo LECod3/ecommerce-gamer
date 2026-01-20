@@ -5,6 +5,23 @@ import { GamesContext } from "../context/gamescontext";
 
 const HeroCarrousel = () => {
   const { games } = useContext(GamesContext);
+  const highlightedGames = games.filter((game) => game.highlighted);
+  const saleGames = games.filter((game) => game.onSale);
+  const newGames = games.filter((game) => game.isNew);
+
+  {highlightedGames.map((game) => (
+    <Carousel.Item key={game.id} className="hero-carousel-item">
+      <img 
+      className="d-block w-100 hero-image"
+      src={game.image} 
+      alt={game.title} 
+      />
+      <Carousel.Caption>
+        <h2>{game.title}</h2>
+        <p>{game.description}</p>
+      </Carousel.Caption>
+    </Carousel.Item>
+  ))}
 
   return (
     <Carousel>
