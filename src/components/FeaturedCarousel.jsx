@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Carousel, Card, Button } from "react-bootstrap";
 import { GamesContext } from "../context/gamescontext";
 //import GameCard from "./GameCard";
 
-const FeaturedCarousel = ({ title, filterTipe }) => {
+const FeaturedCarousel = ({ title, filterType }) => {
     const { games } = useContext(GamesContext);
     const filteredGames = games.filter((game) => {
-        if (filterTipe === "sale") return game.onSale;
-        if (filterTipe === "new") return game.isNew;
+    if (filterType === "sale") return game.onSale;
+    if (filterType === "new") return game.isNew;
         return false;
          });
         
