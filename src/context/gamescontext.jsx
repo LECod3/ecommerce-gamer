@@ -8,12 +8,13 @@ export const GamesContextProvider = ({ children }) => {
       id: 1,
       code: "resident-evil-4-remake", // codigo para url
       title: "Resident Evil 4 Remake",
+      stock: 150,
       price: 59.99,
       category: "Terror / Acción",
       description:
         "Un clásico renacido con gráficos impresionantes y jugabilidad moderna. ¡No te pierdas esta obra maestra del terror!",
       image: "/images/resident_evil-4-remake.webp",
-      gallery: ["/images/re4-1.webp", "/images/re4-2.webp"], // poner mas imagenes 
+      gallery: ["/images/re4-1.webp", "/images/re4-2.webp"], // poner mas imagenes
       developer: "Capcom",
       requirements: {
         os: "Windows 10 (64 bit)",
@@ -21,15 +22,16 @@ export const GamesContextProvider = ({ children }) => {
         memory: "8 GB RAM",
         graphics: "AMD Radeon RX 560 / NVIDIA GeForce GTX 1050 Ti",
       },
-      highlighted: true,        // juegos destacados (hero)
-      onSale: false,          // juegos en promoción
-      isNew: true,           // juegos nuevos
+      highlighted: true, // juegos destacados (hero)
+      onSale: false, // juegos en promoción
+      isNew: true, // juegos nuevos
       reviews: [], // array para reseñas, ver como hacer reseñas locales
     },
     {
       id: 2,
       code: "the-witcher-3",
       title: "The Witcher 3: Wild Hunt",
+      stock: 8,
       price: 29.99,
       category: "RPG / Aventura",
       description:
@@ -43,8 +45,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "6 GB RAM",
         graphics: "Nvidia GPU GeForce GTX 660",
       },
-      highlighted: false,        
-      onSale: true,          
+      highlighted: false,
+      onSale: true,
       isNew: false,
       reviews: [],
     },
@@ -52,6 +54,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 3,
       code: "gta-v",
       title: "Grand Theft Auto V",
+      stock: 8,
       price: 19.99,
       category: "Acción / Aventura",
       description:
@@ -65,8 +68,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "8 GB RAM",
         graphics: "NVIDIA GTX 660",
       },
-      highlighted: true,        
-      onSale: true,          
+      highlighted: true,
+      onSale: true,
       isNew: false,
       reviews: [],
     },
@@ -74,6 +77,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 4,
       code: "fifa-23",
       title: "EA SPORTS™ FIFA 23",
+      stock: 8,
       price: 69.99,
       category: "Deportes",
       description:
@@ -87,8 +91,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "12 GB RAM",
         graphics: "NVIDIA GTX 1660",
       },
-      highlighted: false,        
-      onSale: true,          
+      highlighted: false,
+      onSale: true,
       isNew: false,
       reviews: [],
     },
@@ -96,6 +100,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 5,
       code: "cyberpunk-2077",
       title: "Cyberpunk 2077",
+      stock: 8,
       price: 49.99,
       category: "RPG / Acción",
       description:
@@ -109,8 +114,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "16 GB RAM",
         graphics: "NVIDIA RTX 2060",
       },
-      highlighted: true,        
-      onSale: false,          
+      highlighted: true,
+      onSale: false,
       isNew: false,
       reviews: [],
     },
@@ -118,6 +123,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 6,
       code: "elden-ring",
       title: "Elden Ring",
+      stock: 0,
       price: 59.99,
       category: "RPG / Acción",
       description:
@@ -131,8 +137,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "12 GB RAM",
         graphics: "NVIDIA GTX 1060 / AMD RX 580",
       },
-      highlighted: true,        
-      onSale: true,          
+      highlighted: true,
+      onSale: true,
       isNew: true,
       reviews: [],
     },
@@ -140,6 +146,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 7,
       code: "god-of-war",
       title: "God of War",
+      stock: 8,
       price: 49.99,
       category: "Acción / Aventura",
       description:
@@ -153,8 +160,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "8 GB RAM",
         graphics: "NVIDIA GTX 960",
       },
-      highlighted: false,        
-      onSale: true,          
+      highlighted: false,
+      onSale: true,
       isNew: false,
       reviews: [],
     },
@@ -162,6 +169,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 8,
       code: "red-dead-redemption-2",
       title: "Red Dead Redemption 2",
+      stock: 8,
       price: 59.99,
       category: "Acción / Aventura",
       description:
@@ -175,8 +183,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "12 GB RAM",
         graphics: "NVIDIA GTX 1060",
       },
-      highlighted: true,        
-      onSale: true,          
+      highlighted: true,
+      onSale: true,
       isNew: false,
       reviews: [],
     },
@@ -184,6 +192,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 9,
       code: "call-of-duty-warzone",
       title: "Call of Duty: Warzone",
+      stock: 0,
       price: 0.0,
       category: "Acción",
       description:
@@ -197,8 +206,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "8 GB RAM",
         graphics: "NVIDIA GTX 960",
       },
-      highlighted: false,        
-      onSale: false,          
+      highlighted: false,
+      onSale: false,
       isNew: false,
       reviews: [],
     },
@@ -206,6 +215,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 10,
       code: "minecraft",
       title: "Minecraft",
+      stock: 8,
       price: 26.95,
       category: "Aventura / Sandbox",
       description:
@@ -219,8 +229,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "4 GB RAM",
         graphics: "Intel HD Graphics",
       },
-      highlighted: false,        
-      onSale: true,          
+      highlighted: false,
+      onSale: true,
       isNew: false,
       reviews: [],
     },
@@ -228,6 +238,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 11,
       code: "hollow-knight",
       title: "Hollow Knight",
+      stock: 8,
       price: 14.99,
       category: "Indie / Plataformas",
       description:
@@ -241,8 +252,8 @@ export const GamesContextProvider = ({ children }) => {
         memory: "4 GB RAM",
         graphics: "Intel HD Graphics 4000",
       },
-      highlighted: false,        
-      onSale: true,          
+      highlighted: false,
+      onSale: true,
       isNew: false,
       reviews: [],
     },
@@ -250,6 +261,7 @@ export const GamesContextProvider = ({ children }) => {
       id: 12,
       code: "the-last-of-us-part-1",
       title: "The Last of Us Part I",
+      stock: 15,
       price: 69.99,
       category: "Acción / Aventura",
       description:
@@ -263,12 +275,12 @@ export const GamesContextProvider = ({ children }) => {
         memory: "16 GB RAM",
         graphics: "NVIDIA GTX 1080",
       },
-      highlighted: false,        
-      onSale: true,          
+      highlighted: false,
+      onSale: true,
       isNew: false,
       reviews: [],
     },
-      ]);
+  ]);
 
   const dataGames = {
     games,
