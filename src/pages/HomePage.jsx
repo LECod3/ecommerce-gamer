@@ -15,15 +15,9 @@ const HomePage = () => {
       </Container>
       <HeroCarousel />
       {/* Juegos en promoción */}
-      <FeaturedCarousel
-        title="Ofertas destacadas"
-        filterType="sale"
-      />
+      <FeaturedCarousel title="Ofertas destacadas" filterType="sale" />
       {/* Juegos nuevos */}
-      <FeaturedCarousel
-        title="Nuevos lanzamientos"
-        filterType="new"
-      />
+      <FeaturedCarousel title="Nuevos lanzamientos" filterType="new" />
       <GamesCatalog games={games} />
     </>
   );

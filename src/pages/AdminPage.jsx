@@ -19,13 +19,15 @@ const AdminPage = () => {
   };
 
   const totalGames = games.length;
-  const inStock = games.filter((gameFilteredByStock) => gameFilteredByStock.stock > 0).length;
+  const inStock = games.filter(
+    (gameFilteredByStock) => gameFilteredByStock.stock > 0,
+  ).length;
   const outOfStock = totalGames - inStock;
 
   return (
     <Container className="my-5">
       <h2 className="mb-2 text-white">Inventario de Juegos</h2>
-        <p className="text-white">Administra los juegos de la tienda</p>
+      <p className="text-white">Administra los juegos de la tienda</p>
       {/* resumen rapido */}
       <Row className="mb-4">
         <Col md={4}>
@@ -47,9 +49,7 @@ const AdminPage = () => {
         <Col md={4}>
           <Card bg="dark" text="white" className="mb-3 border-secondary">
             <Card.Body>
-              <Card.Title className="text-danger small">
-                Sin Stock
-              </Card.Title>
+              <Card.Title className="text-danger small">Sin Stock</Card.Title>
               <h2 className="fw-bold text-danger">{outOfStock}</h2>
             </Card.Body>
           </Card>

@@ -47,7 +47,6 @@ const NavbarComponent = ({ onLoginClick, onRegisterClick }) => {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              // Si NO está logueado, mostramos botones de Auth
               <>
                 <Nav.Link
                   onClick={onLoginClick}
