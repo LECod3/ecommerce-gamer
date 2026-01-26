@@ -14,23 +14,22 @@ const AdminPage = () => {
   const { games } = useContext(GamesContext);
   const stockStatus = (stock) => {
     if (stock === 0) return { variant: "danger", text: "Sin Stock" };
-    if (stock < 10) return { variant: "warning", text: "Bajo Stock" };
+    if (stock < 30) return { variant: "warning", text: "Bajo Stock" };
     return { variant: "success", text: "Stock Disponible" };
   };
 
   const totalGames = games.length;
-  const inStock = games.filter(
-    (gameFilteredByStock) => gameFilteredByStock.stock > 0,
-  ).length;
-  const outOfStock = totalGames - inStock;
+  const inStock = games.filter((g) => g.stock >= 30).length;
+  const gamesLowStock = games.filter((g) => g.stock > 0 && g.stock < 30).length;
+  const outOfStock = games.filter((g) => g.stock === 0).length;
 
   return (
     <Container className="my-5">
-      <h2 className="mb-2 text-white">Inventario de Juegos</h2>
-      <p className="text-white">Administra los juegos de la tienda</p>
+      <h2 className="mb-2 text-white fw-bold text-center">Inventario de Juegos</h2>
+      <p className="text-white text-center"> Visualiza y administra los juegos de la tienda con los botones de editar y eliminar</p>
       {/* resumen rapido */}
       <Row className="mb-4">
-        <Col md={4}>
+        <Col md={3}>
           <Card bg="dark" text="white" className="mb-3 border-secondary">
             <Card.Body>
               <Card.Title className="small">Total de juegos</Card.Title>
@@ -38,7 +37,7 @@ const AdminPage = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4}>
+        <Col md={3}>
           <Card bg="dark" text="white" className="mb-3 border-secondary">
             <Card.Body>
               <Card.Title className="text-success small">En Stock</Card.Title>
@@ -46,7 +45,15 @@ const AdminPage = () => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={4}>
+        <Col md={3}>
+          <Card bg="dark" text="white" className="mb-3 border-secondary">
+            <Card.Body>
+              <Card.Title className="text-warning small">Bajo Stock</Card.Title>
+              <h2 className="fw-bold text-warning">{gamesLowStock}</h2>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={3}>
           <Card bg="dark" text="white" className="mb-3 border-secondary">
             <Card.Body>
               <Card.Title className="text-danger small">Sin Stock</Card.Title>
@@ -106,7 +113,7 @@ const AdminPage = () => {
                     </td>
                     <td className="text-end">
                       <Button variant="link" className="text-primary p-0 me-2">
-                        <i className="bi bi-pencil-square"></i> Editar
+                        <i className="bi bi-pencil-square"></i> 
                       </Button>
                       <Button variant="link" className="text-danger p-0">
                         <i className="bi bi-trash"></i>
