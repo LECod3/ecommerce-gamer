@@ -11,8 +11,20 @@ export const GamesContextProvider = ({ children }) => {
       stock: 150,
       price: 59.99,
       category: "Terror / Acción",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Un clásico renacido con gráficos impresionantes y jugabilidad moderna. ¡No te pierdas esta obra maestra del terror!",
+       longDescription: `
+        Leon S. Kennedy regresa en una versión completamente renovada del clásico.
+
+        • Combate modernizado
+        • Terror constante
+        • Historia reimaginada
+        • Ambientación oscura y realista
+
+        Un juego que mezcla acción y horror como pocos.
+        `,
       image: "/images/resident_evil-4-remake.webp",
       gallery: ["/images/re4-1.webp", "/images/re4-2.webp"], // poner mas imagenes
       developer: "Capcom",
@@ -25,7 +37,16 @@ export const GamesContextProvider = ({ children }) => {
       highlighted: true, // juegos destacados (hero)
       onSale: false, // juegos en promoción
       isNew: true, // juegos nuevos
-      reviews: [], // array para reseñas, ver como hacer reseñas locales
+      reviews: [ {
+        user: "Lucas",
+        rating: 5,
+        comment: "Muy buen juego, gráficos increíbles."
+      },
+      {
+        user: "Martina",
+        rating: 4,
+        comment: "La historia es buenísima, lo volvería a jugar."
+      }], // array para reseñas, ver como hacer reseñas locales
     },
     {
       id: 2,
@@ -34,6 +55,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 8,
       price: 29.99,
       category: "RPG / Aventura",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Conviértete en Geralt de Rivia, un cazador de monstruos profesional, en busca de la niña de la profecía en un vasto mundo abierto.",
       image: "/images/resident_evil-4-remake.webp", // placeholder, buscar imagenes
@@ -57,6 +80,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 8,
       price: 19.99,
       category: "Acción / Aventura",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se ven involucrados con lo peor del submundo criminal.",
       image: "/images/gta-v.webp",
@@ -80,6 +105,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 8,
       price: 69.99,
       category: "Deportes",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "FIFA 23 nos acerca a The World's Game con la tecnología HyperMotion2 que ofrece una experiencia de juego aún más realista.",
       image: "/images/fifa-23.webp",
@@ -103,6 +130,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 8,
       price: 49.99,
       category: "RPG / Acción",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Cyberpunk 2077 es un RPG de acción y aventura de mundo abierto ambientado en Night City, una megalópolis obsesionada con el poder.",
       image: "/images/cyberpunk.webp",
@@ -126,6 +155,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 0,
       price: 59.99,
       category: "RPG / Acción",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Un vasto mundo abierto lleno de desafíos, creado por FromSoftware junto a George R. R. Martin.",
       image: "/images/elden-ring.webp",
@@ -149,6 +180,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 8,
       price: 49.99,
       category: "Acción / Aventura",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Kratos regresa en una historia épica ambientada en la mitología nórdica, junto a su hijo Atreus.",
       image: "/images/god-of-war.webp",
@@ -172,6 +205,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 8,
       price: 59.99,
       category: "Acción / Aventura",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Una épica historia del lejano oeste con un mundo abierto extremadamente detallado.",
       image: "/images/red-dead-redemption-2.webp",
@@ -195,6 +230,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 0,
       price: 0.0,
       category: "Acción",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Battle royale gratuito con combates intensos y mapas a gran escala.",
       image: "/images/cod-warzone.webp",
@@ -218,6 +255,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 8,
       price: 26.95,
       category: "Aventura / Sandbox",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Explora, construye y sobrevive en un mundo infinito hecho de bloques.",
       image: "/images/minecraft.webp",
@@ -241,6 +280,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 8,
       price: 14.99,
       category: "Indie / Plataformas",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Un desafiante metroidvania con un estilo artístico único y gran ambientación.",
       image: "/images/hollow-knight.webp",
@@ -264,6 +305,8 @@ export const GamesContextProvider = ({ children }) => {
       stock: 15,
       price: 69.99,
       category: "Acción / Aventura",
+      rating: 4.6,
+      ratingsCount: 2543,
       description:
         "Una historia intensa de supervivencia en un mundo devastado por una pandemia.",
       image: "/images/the-last-of-us.webp",

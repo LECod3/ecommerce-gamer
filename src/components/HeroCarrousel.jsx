@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Carousel } from "react-bootstrap";
 import "../styles/HeroCarrousel.css";
 import { GamesContext } from "../context/gamescontext";
+import { Link } from "react-router-dom";
 
 const HeroCarrousel = () => {
   const { games } = useContext(GamesContext);
@@ -11,6 +12,7 @@ const HeroCarrousel = () => {
     <Carousel>
       {highlightedGames.map((game) => (
         <Carousel.Item key={game.id} className="hero-carousel-item">
+          <Link to={`/games/${game.code}`}>
           <div className="hero-overlay"></div>
           <img
             className="d-block w-100 hero-image"
@@ -21,6 +23,7 @@ const HeroCarrousel = () => {
             <h2>{game.title}</h2>
             <p>{game.description}</p>
           </Carousel.Caption>
+          </Link>
         </Carousel.Item>
       ))}
     </Carousel>

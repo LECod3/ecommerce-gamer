@@ -42,7 +42,7 @@ function App() {
           }
         />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/game/:id" element={<GameDetailPage />} />
+        <Route path="/games/:code" element={<GameDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ModalLogin
