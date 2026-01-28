@@ -70,7 +70,7 @@ const GameDetailPage = () => {
               </div>
             ))
           ) : (
-            <p className="text-muted">Este juego todavia no tiene reseñas.</p>
+            <p className="text-white">Este juego todavia no tiene reseñas.</p>
           )}
         </div>
       </div>

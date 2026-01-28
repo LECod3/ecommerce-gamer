@@ -13,7 +13,7 @@ const GameCard = ({ game }) => {
       />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="fw-bold">{game.title}</Card.Title>
-        <Card.Text className="text-muted small">
+        <Card.Text className="text-white small">
           {game.description?.substring(0, 100)}...
         </Card.Text>
         <div className="mt-auto d-flex justify-content-between align-items-center">

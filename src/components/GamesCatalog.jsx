@@ -25,13 +25,15 @@ const GamesCatalog = () => {
   const totalPages = Math.ceil(filteredGames.length / pageSize);
   const paginatedGames = filteredGames.slice(
     (currentPage - 1) * pageSize,
-    currentPage * pageSize
+    currentPage * pageSize,
   );
 
   const start = (currentPage - 1) * pageSize + 1;
   const end = Math.min(currentPage * pageSize, filteredGames.length);
 
-  useEffect(() => {setCurrentPage(1);}, [search, category, pageSize]);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, category, pageSize]);
 
   return (
     <div className="container my-5">
@@ -47,7 +49,11 @@ const GamesCatalog = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
 
-          <select className="form-select w-auto" value={pageSize} onChange={(e) => setPageSize(Number(e.target.value))}>
+          <select
+            className="form-select w-auto"
+            value={pageSize}
+            onChange={(e) => setPageSize(Number(e.target.value))}
+          >
             <option value={6}>6 por paginás</option>
             <option value={12}>12 por paginás</option>
             <option value={24}>24 por paginás</option>
@@ -68,7 +74,7 @@ const GamesCatalog = () => {
       </div>
 
       <div className="row">
-        <p className="text-muted mb-2">
+        <p className="text-light opacity-75 mb-2">
           Mostrando {start}–{end} de {filteredGames.length} juegos
         </p>
         {paginatedGames.length > 0 ? (
@@ -81,7 +87,7 @@ const GamesCatalog = () => {
             </div>
           ))
         ) : (
-          <p className="text-muted">No se encontraron juegos.</p>
+          <p className="text-light opacity-75">No se encontraron juegos.</p>
         )}
       </div>
 

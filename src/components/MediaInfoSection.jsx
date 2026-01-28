@@ -69,11 +69,11 @@ return (
 
             <div className="col-12 col-lg-4">
                 <h2 className="fw-bold">{game.title}</h2>
-                <p className="text-muted mb-1">{game.developer}</p>
+                <p className="text-white mb-1">{game.developer}</p>
                 
                 <div className="d-flex align-items-center gap-2 mb-2">
                     <StarRating rating={game.rating} />
-                    <small className="text-muted">
+                    <small className="text-white">
                     ({game.ratingsCount} ratings)
                     </small>
                 </div>
@@ -93,9 +93,10 @@ return (
 
                 <ul className="list-unstyled small">
                     <li><strong>Categoría:</strong> {game.category}</li>
-                    <li><strong>Plataforma:</strong> PC</li>
-                    <li><strong>Modo:</strong> Single Player</li>
-                    <li><strong>Idiomas:</strong> Español / Inglés</li>
+                    <li><strong>Plataforma:</strong> {game.platform} </li>
+                    <li><strong>Modo:</strong> {game.mode}</li>
+                    <li><strong>Idiomas:</strong> {game.languages}</li>
+                    <li><strong>Fecha de lanzamiento:</strong> {game.releaseDate}</li>
                 </ul>
             </div>
         </div>

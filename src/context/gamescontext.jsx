@@ -25,9 +25,12 @@ export const GamesContextProvider = ({ children }) => {
 
         Un juego que mezcla acción y horror como pocos.
         `,
-      image: "/images/resident_evil-4-remake.webp",
-      gallery: ["/images/re4-1.webp", "/images/re4-2.webp"], // poner mas imagenes
+      image: "https://i.postimg.cc/d1dk40cq/resident-evil-4-1.webp",
+      gallery: ["https://i.postimg.cc/d1dk40cq/resident-evil-4-1.webp"], // poner mas imagenes
       developer: "Capcom",
+      platform: "PC",
+      mode: "Un Jugador",
+      languages: "Español / Inglés / Portugués",
       requirements: {
         os: "Windows 10 (64 bit)",
         processor: "AMD Ryzen 3 1200 / Intel Core i5-7500",
@@ -59,7 +62,7 @@ export const GamesContextProvider = ({ children }) => {
       ratingsCount: 2543,
       description:
         "Conviértete en Geralt de Rivia, un cazador de monstruos profesional, en busca de la niña de la profecía en un vasto mundo abierto.",
-      image: "/images/resident_evil-4-remake.webp", // placeholder, buscar imagenes
+      image: "", // placeholder, buscar imagenes
       gallery: [],
       developer: "CD Projekt Red",
       requirements: {
@@ -320,6 +323,60 @@ export const GamesContextProvider = ({ children }) => {
       },
       highlighted: false,
       onSale: true,
+      isNew: false,
+      reviews: [],
+    },
+    {
+      id: 13,
+      code: "the-last-of-us-part-2",
+      title: "The Last of Us Part II",
+      stock: 12,
+      price: 69.99,
+      category: "Acción / Aventura",
+      rating: 4.6,
+      ratingsCount: 2543,
+      description:
+        "Una historia intensa de supervivencia en un mundo devastado por una pandemia.",
+      image: "/images/the-last-of-us.webp",
+      gallery: [],
+      developer: "Naughty Dog",
+      requirements: {
+        os: "Windows 10",
+        processor: "Intel Core i7-8700",
+        memory: "16 GB RAM",
+        graphics: "NVIDIA GTX 1080",
+      },
+      highlighted: false,
+      onSale: false,
+      isNew: false,
+      reviews: [],
+    },
+    {
+      id: 14,
+      code: "war-thunder",
+      title: "War Thunder",
+      stock: 50,
+      price: 69.99,
+      category: "Simulación / Combate con vehiculos", 
+      rating: 4.8,
+      ratingsCount: 18.943,
+      description:
+        "War Thunder es un juego de combate MMO gratuito de vehículos militares usados en la Segunda Guerra Mundial y la guerra de Corea. Lucha en grandes batallas de tierra, mar y aire con jugadores internacionales en un entorno en continuo desarrollo.",
+      image: "https://i.postimg.cc/rFvSG7r0/war_thunder_2.webp",
+      gallery: ["https://i.postimg.cc/FKH10R1H/war-thunder-1.webp", "https://i.postimg.cc/QxRpgvT5/war-thunder-3.webp"],
+      developer: "Gaijin Entertainment",
+      platform: "PC",
+      mode: "Multijugador",
+      languages: "Español / Inglés / Portugués",
+      releaseDate: "12 de Agosto de 2013",
+      requirements: {
+        os: "Windows 10 (64-bit)",
+        processor: "Intel Core i5-4460 / AMD FX-6300",
+        memory: "8 GB RAM",
+        graphics: "NVIDIA GeForce 1060",
+      },
+      highlighted: true,
+      onSale: false,
       isNew: false,
       reviews: [],
     },
