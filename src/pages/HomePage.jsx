@@ -10,7 +10,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Container className="text-center my-4">
+      <Container className="text-center mt-4 mb-2">
         <h1 className="display-6 fw-bold">Juegos Destacados</h1>
       </Container>
       <HeroCarousel />

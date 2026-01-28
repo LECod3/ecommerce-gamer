@@ -21,7 +21,7 @@ const HeroCarrousel = () => {
           />
           <Carousel.Caption>
             <h2>{game.title}</h2>
-            <p>{game.description}</p>
+            <p className="d-none d-md-block">{game.description}</p>
           </Carousel.Caption>
           </Link>
         </Carousel.Item>
