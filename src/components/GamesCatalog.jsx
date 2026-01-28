@@ -1,12 +1,16 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import GameCard from "./GameCard";
 import { GamesContext } from "../context/gamescontext.jsx";
+import Pagination from "./Pagination.jsx";
 
 const GamesCatalog = () => {
   const { games } = useContext(GamesContext);
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(6);
 
   const categories = ["all", ...new Set(games.map((game) => game.category))];
 
@@ -17,6 +21,17 @@ const GamesCatalog = () => {
 
     return matchTitle && matchCategory;
   });
+
+  const totalPages = Math.ceil(filteredGames.length / pageSize);
+  const paginatedGames = filteredGames.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
+  const start = (currentPage - 1) * pageSize + 1;
+  const end = Math.min(currentPage * pageSize, filteredGames.length);
+
+  useEffect(() => {setCurrentPage(1);}, [search, category, pageSize]);
 
   return (
     <div className="container my-5">
@@ -31,6 +46,12 @@ const GamesCatalog = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
+
+          <select className="form-select w-auto" value={pageSize} onChange={(e) => setPageSize(Number(e.target.value))}>
+            <option value={6}>6 por paginás</option>
+            <option value={12}>12 por paginás</option>
+            <option value={24}>24 por paginás</option>
+          </select>
 
           <select
             className="form-select w-25"
@@ -47,8 +68,11 @@ const GamesCatalog = () => {
       </div>
 
       <div className="row">
-        {filteredGames.length > 0 ? (
-          filteredGames.map((game) => (
+        <p className="text-muted mb-2">
+          Mostrando {start}–{end} de {filteredGames.length} juegos
+        </p>
+        {paginatedGames.length > 0 ? (
+          paginatedGames.map((game) => (
             <div
               key={game.id}
               className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
@@ -60,6 +84,12 @@ const GamesCatalog = () => {
           <p className="text-muted">No se encontraron juegos.</p>
         )}
       </div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
     </div>
   );
 };
