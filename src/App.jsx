@@ -9,6 +9,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Navbar from "./components/Navbar";
 import ModalLogin from "./components/ModalLogin";
 import ModalRegister from "./components/ModalRegister";
+import Footer from "./components/Footer";
 
 function App() {
   const [showRegister, setShowRegister] = useState(false);
@@ -26,25 +27,28 @@ function App() {
     handleShowLogin();
   };
   return (
-    <div className="container">
-      <Navbar
-        onLoginClick={handleShowLogin}
-        onRegisterClick={handleShowRegister}
-      />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <AdminPage />
-            </ProtectedRoute>
-          }
+    <div className="d-flex flex-column min-vh-100">
+      <div className="container flex-grow-1">
+        <Navbar
+          onLoginClick={handleShowLogin}
+          onRegisterClick={handleShowRegister}
         />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/games/:code" element={<GameDetailPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/games/:code" element={<GameDetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
+      <Footer />
       <ModalLogin
         show={showLogin}
         handleClose={handleCloseLogin}
