@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   Container,
   Table,
@@ -9,6 +9,7 @@ import {
   Card,
 } from "react-bootstrap";
 import { GamesContext } from "../context/gamescontext";
+import Pagination from "../components/Pagination.jsx";
 
 const AdminPage = () => {
   const { games } = useContext(GamesContext);
@@ -18,10 +19,33 @@ const AdminPage = () => {
     return { variant: "success", text: "Stock Disponible" };
   };
 
+  const getStockType = (stock) => {
+    if (stock === 0) return "outOfStock";
+    if (stock < 30) return "lowStock";
+    return "abundantStock";
+  }
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize] = useState(5);
+  const [stockFilter, setStockFilter] = useState("all");
+
   const totalGames = games.length;
   const inStock = games.filter((g) => g.stock >= 30).length;
   const gamesLowStock = games.filter((g) => g.stock > 0 && g.stock < 30).length;
   const outOfStock = games.filter((g) => g.stock === 0).length;
+
+  const filteredByStock = games.filter((game) => {
+    if (stockFilter === "all") return true;
+    return getStockType(game.stock) === stockFilter;
+  });
+
+  const totalPages = Math.ceil(filteredByStock.length / pageSize);
+  const paginatedGames = filteredByStock.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
+  useEffect(() => {setCurrentPage(1)}, [stockFilter]);
 
   return (
     <Container className="my-5">
@@ -84,7 +108,7 @@ const AdminPage = () => {
             </thead>
             <tbody>
               {/* mapeo de juegos */}
-              {games.map((game) => {
+              {paginatedGames.map((game) => {
                 const status = stockStatus(game.stock);
                 return (
                   <tr key={game.id}>
@@ -124,6 +148,46 @@ const AdminPage = () => {
               })}
             </tbody>
           </Table>
+
+          <div className="d-flex justify-content-center gap-2 mt-3">
+            <button 
+              variant={stockFilter === "all" ? "primary" : "outline-primary"}
+              size="sm"
+              onClick={() => setStockFilter("all")}
+            >
+              Todos
+            </button>
+
+            <button
+              variant={stockFilter === "abundantStock" ? "success" : "outline-success"}
+              size="sm"
+              onClick={() => setStockFilter("abundantStock")}
+            >
+              Abundante Stock
+            </button>
+
+            <Button
+              variant={stockFilter === "lowStock" ? "warning" : "outline-warning"}
+              size="sm"
+              onClick={() => setStockFilter("lowStock")}
+            >
+              Poco stock
+            </Button>
+
+            <Button
+              variant={stockFilter === "outOfStock" ? "danger" : "outline-danger"}
+              size="sm"
+              onClick={() => setStockFilter("outOfStock")}
+            >
+              Sin stock
+            </Button>
+          </div>
+
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
         </Card.Body>
       </Card>
     </Container>
