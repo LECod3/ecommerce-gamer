@@ -62,7 +62,7 @@ export const GamesContextProvider = ({ children }) => {
       ratingsCount: 2543,
       description:
         "Conviértete en Geralt de Rivia, un cazador de monstruos profesional, en busca de la niña de la profecía en un vasto mundo abierto.",
-      image: "", // placeholder, buscar imagenes
+      image: "/images/fifa-23.webp", // placeholder, buscar imagenes
       gallery: [],
       developer: "CD Projekt Red",
       requirements: {
