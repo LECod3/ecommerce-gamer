@@ -7,7 +7,15 @@ export const GamesContextProvider = ({ children }) => {
   const [games, setGames] = useState(initialGames);
   const dataGames = { games, setGames };
 
+  const deleteGame = (id) => {
+    setGames((prev) => prev.filter((game) => game.id !== id));
+  };
+
+  const updateGame = (updatedGame) => {
+    setGames((prev) => prev.map((game) => game.id === updatedGame.id ? updatedGame : game))
+  };
+
   return (
-    <GamesContext.Provider value={dataGames}>{children}</GamesContext.Provider>
+    <GamesContext.Provider value={{ ...dataGames, deleteGame, updateGame }}>{children}</GamesContext.Provider>
   );
 };

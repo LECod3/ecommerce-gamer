@@ -7,12 +7,14 @@ import {
   Row,
   Col,
   Card,
+  Modal,
+  Form,
 } from "react-bootstrap";
 import { GamesContext } from "../context/gamescontext";
 import Pagination from "../components/Pagination.jsx";
 
 const AdminPage = () => {
-  const { games } = useContext(GamesContext);
+  const { games, deleteGame, updateGame } = useContext(GamesContext);
   const stockStatus = (stock) => {
     if (stock === 0) return { variant: "danger", text: "Sin Stock" };
     if (stock < 30) return { variant: "warning", text: "Bajo Stock" };
@@ -23,7 +25,10 @@ const AdminPage = () => {
     if (stock === 0) return "outOfStock";
     if (stock < 30) return "lowStock";
     return "abundantStock";
-  }
+  };
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedGame, setSelectedGame] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize] = useState(5);
@@ -46,6 +51,20 @@ const AdminPage = () => {
   );
 
   useEffect(() => {setCurrentPage(1)}, [stockFilter]);
+
+  const openEditModal = (game) => {
+    setSelectedGame({...game});
+    setShowModal(true);
+  };
+
+  const handleSaveChanges = () => {
+    updateGame({
+      ...selectedGame, 
+      price: Number(selectedGame.price), 
+      stock: Number(selectedGame.stock)
+    });
+    setShowModal(false);
+  };
 
   return (
     <Container className="my-5">
@@ -136,10 +155,14 @@ const AdminPage = () => {
                       </Badge>
                     </td>
                     <td className="text-end">
-                      <Button variant="link" className="text-primary p-0 me-2">
+                      <Button variant="link" className="text-primary p-0 me-2" onClick={() => openEditModal(game)}>
                         <i className="bi bi-pencil-square"></i> 
                       </Button>
-                      <Button variant="link" className="text-danger p-0">
+                      <Button variant="link" className="text-danger p-0" onClick={() => {
+                          if (confirm(`¿Eliminar "${game.title}"?`)) {
+                            deleteGame(game.id);
+                          }
+                        }}>
                         <i className="bi bi-trash"></i>
                       </Button>
                     </td>
@@ -150,21 +173,21 @@ const AdminPage = () => {
           </Table>
 
           <div className="d-flex justify-content-center gap-2 mt-3">
-            <button 
+            <Button 
               variant={stockFilter === "all" ? "primary" : "outline-primary"}
               size="sm"
               onClick={() => setStockFilter("all")}
             >
               Todos
-            </button>
+            </Button>
 
-            <button
+            <Button
               variant={stockFilter === "abundantStock" ? "success" : "outline-success"}
               size="sm"
               onClick={() => setStockFilter("abundantStock")}
             >
               Abundante Stock
-            </button>
+            </Button>
 
             <Button
               variant={stockFilter === "lowStock" ? "warning" : "outline-warning"}
@@ -190,6 +213,51 @@ const AdminPage = () => {
           />
         </Card.Body>
       </Card>
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Juego</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          {selectedGame && (
+            <Form>
+              <Form.Group className="mb-3"> {/* controlId="formGameTitle"*/}
+                <Form.Label>Título</Form.Label>
+                <Form.Control
+                  value={selectedGame.title}
+                  onChange={(e) => setSelectedGame({...selectedGame, title: e.target.value,})}/>
+              </Form.Group>
+
+              <Form.Group className="mb-3"> 
+                <Form.Label>Precio</Form.Label>
+                <Form.Control 
+                  type="number"
+                  value={selectedGame.price}
+                  onChange={(e) =>
+                    setSelectedGame({...selectedGame, price: e.target.value,})}/>
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label>Stock</Form.Label>
+                <Form.Control 
+                  type="number"
+                  value={selectedGame.stock}
+                  onChange={(e) =>
+                    setSelectedGame({...selectedGame, stock: e.target.value,})}/>
+              </Form.Group>
+            </Form>
+          )}
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Cancelar
+          </Button>
+          <Button variant="primary" onClick={handleSaveChanges}>
+            Guardar cambios
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
