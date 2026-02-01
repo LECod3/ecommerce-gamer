@@ -1,0 +1,58 @@
+.admin-container {
+  padding-bottom: 3rem;
+}
+
+.admin-title {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.admin-subtitle {
+  color: #adb5bd;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.admin-stat-card {
+  background-color: #1e1e1e !important;
+  border: 1px solid #333 !important;
+  transition: transform 0.2s ease;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #4b0082 !important;
+}
+
+.admin-stat-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-img-thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 12px;
+  border: 1px solid #444;
+}
+
+.admin-table-container {
+  background-color: #1e1e1e !important;
+  border: 1px solid #333 !important;
+}
+
+.btn-action {
+  font-size: 1.2rem;
+  transition: opacity 0.2s;
+}
+
+.btn-action:hover {
+  opacity: 0.8;
+}

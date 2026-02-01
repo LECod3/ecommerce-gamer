@@ -1,17 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
-import {
-  Container,
-  Table,
-  Button,
-  Badge,
-  Row,
-  Col,
-  Card,
-  Modal,
-  Form,
-} from "react-bootstrap";
+import { Container, Table, Button, Badge, Row, Col, Card, Modal, Form } from "react-bootstrap";
 import { GamesContext } from "../context/gamescontext";
 import Pagination from "../components/Pagination.jsx";
+import "../styles/AdminPage.css";
 
 const AdminPage = () => {
   const { games, deleteGame, updateGame } = useContext(GamesContext);
@@ -47,66 +38,79 @@ const AdminPage = () => {
   const totalPages = Math.ceil(filteredByStock.length / pageSize);
   const paginatedGames = filteredByStock.slice(
     (currentPage - 1) * pageSize,
-    currentPage * pageSize
+    currentPage * pageSize,
   );
 
-  useEffect(() => {setCurrentPage(1)}, [stockFilter]);
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [stockFilter]);
 
   const openEditModal = (game) => {
-    setSelectedGame({...game});
+    setSelectedGame({ ...game });
     setShowModal(true);
   };
 
   const handleSaveChanges = () => {
     updateGame({
-      ...selectedGame, 
-      price: Number(selectedGame.price), 
-      stock: Number(selectedGame.stock)
+      ...selectedGame,
+      price: Number(selectedGame.price),
+      stock: Number(selectedGame.stock),
     });
     setShowModal(false);
   };
 
   return (
-    <Container className="my-5">
-      <h2 className="mb-2 text-white fw-bold text-center">Inventario de Juegos</h2>
-      <p className="text-white text-center"> Visualiza y administra los juegos de la tienda con los botones de editar y eliminar</p>
-      {/* resumen rapido */}
+    <Container className="admin-container my-5">
+      <h2 className="admin-title text-center">Inventario de Juegos</h2>
+      <p className="admin-subtitle text-center">
+        Visualiza y administra los juegos de la tienda con los botones de editar
+        y eliminar
+      </p>
+      {/* resumen visual para usuario admin */}
       <Row className="mb-4">
         <Col md={3}>
-          <Card bg="dark" text="white" className="mb-3 border-secondary">
+          <Card className="admin-stat-card mb-3 text-white">
             <Card.Body>
-              <Card.Title className="small">Total de juegos</Card.Title>
-              <h2 className="fw-bold">{totalGames}</h2>
+              <Card.Title className="admin-stat-title">
+                Juegos totales
+              </Card.Title>
+              <h2 className="fw-bold m-0">{totalGames}</h2>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3}>
-          <Card bg="dark" text="white" className="mb-3 border-secondary">
+          <Card className="admin-stat-card mb-3 text-white">
             <Card.Body>
-              <Card.Title className="text-success small">En Stock</Card.Title>
-              <h2 className="fw-bold text-success">{inStock}</h2>
+              <Card.Title className="admin-stat-title text-success">
+                Disponibles
+              </Card.Title>
+              <h2 className="fw-bold text-success m-0">{inStock}</h2>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3}>
-          <Card bg="dark" text="white" className="mb-3 border-secondary">
+          <Card className="admin-stat-card mb-3 text-white">
             <Card.Body>
-              <Card.Title className="text-warning small">Bajo Stock</Card.Title>
-              <h2 className="fw-bold text-warning">{gamesLowStock}</h2>
+              <Card.Title className="admin-stat-title text-warning">
+                Bajo Stock
+              </Card.Title>
+              <h2 className="fw-bold text-warning m-0">{gamesLowStock}</h2>
             </Card.Body>
           </Card>
         </Col>
         <Col md={3}>
-          <Card bg="dark" text="white" className="mb-3 border-secondary">
+          <Card className="admin-stat-card mb-3 text-white">
             <Card.Body>
-              <Card.Title className="text-danger small">Sin Stock</Card.Title>
-              <h2 className="fw-bold text-danger">{outOfStock}</h2>
+              <Card.Title className="admin-stat-title text-danger">
+                Agotados
+              </Card.Title>
+              <h2 className="fw-bold text-danger m-0">{outOfStock}</h2>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-      {/* tabla gestion */}
-      <Card bg="dark" text="white" className="border-secondary">
+      {/* tabla gestion de juegos */}
+      <Card className="admin-table-container text-white">
         <Card.Body>
           <div className="d-flex justify-content-between align-items-center mb-3">
             <h4 className="mb-0">Listado de Juegos</h4>
@@ -137,13 +141,7 @@ const AdminPage = () => {
                         <img
                           src={game.image}
                           alt={game.title}
-                          style={{
-                            width: "40px",
-                            height: "40px",
-                            objectFit: "cover",
-                            borderRadius: "4px",
-                            marginRight: "10px",
-                          }}
+                          className="game-img-thumb"
                         />
                         {game.title}
                       </div>
@@ -155,14 +153,22 @@ const AdminPage = () => {
                       </Badge>
                     </td>
                     <td className="text-end">
-                      <Button variant="link" className="text-primary p-0 me-2" onClick={() => openEditModal(game)}>
-                        <i className="bi bi-pencil-square"></i> 
+                      <Button
+                        variant="link"
+                        className="btn-action text-primary p-0 me-3"
+                        onClick={() => openEditModal(game)}
+                      >
+                        <i className="bi bi-pencil-square"></i>
                       </Button>
-                      <Button variant="link" className="text-danger p-0" onClick={() => {
+                      <Button
+                        variant="link"
+                        className="btn-action text-danger p-0"
+                        onClick={() => {
                           if (confirm(`¿Eliminar "${game.title}"?`)) {
                             deleteGame(game.id);
                           }
-                        }}>
+                        }}
+                      >
                         <i className="bi bi-trash"></i>
                       </Button>
                     </td>
@@ -173,34 +179,52 @@ const AdminPage = () => {
           </Table>
 
           <div className="d-flex justify-content-center gap-2 mt-3">
-            <Button 
+            <Button
               variant={stockFilter === "all" ? "primary" : "outline-primary"}
               size="sm"
-              onClick={() => setStockFilter("all")}
+              onClick={() => {
+                setStockFilter("all");
+                setCurrentPage(1);
+              }}
             >
               Todos
             </Button>
 
             <Button
-              variant={stockFilter === "abundantStock" ? "success" : "outline-success"}
+              variant={
+                stockFilter === "abundantStock" ? "success" : "outline-success"
+              }
               size="sm"
-              onClick={() => setStockFilter("abundantStock")}
+              onClick={() => {
+                setStockFilter("abundantStock");
+                setCurrentPage(1);
+              }}
             >
               Abundante Stock
             </Button>
 
             <Button
-              variant={stockFilter === "lowStock" ? "warning" : "outline-warning"}
+              variant={
+                stockFilter === "lowStock" ? "warning" : "outline-warning"
+              }
               size="sm"
-              onClick={() => setStockFilter("lowStock")}
+              onClick={() => {
+                setStockFilter("lowStock");
+                setCurrentPage(1);
+              }}
             >
               Poco stock
             </Button>
 
             <Button
-              variant={stockFilter === "outOfStock" ? "danger" : "outline-danger"}
+              variant={
+                stockFilter === "outOfStock" ? "danger" : "outline-danger"
+              }
               size="sm"
-              onClick={() => setStockFilter("outOfStock")}
+              onClick={() => {
+                setStockFilter("outOfStock");
+                setCurrentPage(1);
+              }}
             >
               Sin stock
             </Button>
@@ -221,29 +245,36 @@ const AdminPage = () => {
         <Modal.Body>
           {selectedGame && (
             <Form>
-              <Form.Group className="mb-3"> {/* controlId="formGameTitle"*/}
+              <Form.Group className="mb-3">
                 <Form.Label>Título</Form.Label>
                 <Form.Control
                   value={selectedGame.title}
-                  onChange={(e) => setSelectedGame({...selectedGame, title: e.target.value,})}/>
+                  onChange={(e) =>
+                    setSelectedGame({ ...selectedGame, title: e.target.value })
+                  }
+                />
               </Form.Group>
 
-              <Form.Group className="mb-3"> 
+              <Form.Group className="mb-3">
                 <Form.Label>Precio</Form.Label>
-                <Form.Control 
+                <Form.Control
                   type="number"
                   value={selectedGame.price}
                   onChange={(e) =>
-                    setSelectedGame({...selectedGame, price: e.target.value,})}/>
+                    setSelectedGame({ ...selectedGame, price: e.target.value })
+                  }
+                />
               </Form.Group>
 
               <Form.Group>
                 <Form.Label>Stock</Form.Label>
-                <Form.Control 
+                <Form.Control
                   type="number"
                   value={selectedGame.stock}
                   onChange={(e) =>
-                    setSelectedGame({...selectedGame, stock: e.target.value,})}/>
+                    setSelectedGame({ ...selectedGame, stock: e.target.value })
+                  }
+                />
               </Form.Group>
             </Form>
           )}
