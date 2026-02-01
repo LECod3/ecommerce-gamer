@@ -5,15 +5,21 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/authcontext";
+import logo from "../assets/ecommerce-logo-cropped.webp";
 
 const NavbarComponent = ({ onLoginClick, onRegisterClick }) => {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="lg" sticky="top">
+    <Navbar
+      style={{ backgroundColor: "#272030" }}
+      data-bs-theme="dark"
+      expand="lg"
+      sticky="top"
+    >
       <Container>
-        <Navbar.Brand as={Link} to="/">
-          Gamer Store
+        <Navbar.Brand as={Link} to="/" className="p-0">
+          <img src={logo} alt="Gamer Store" height="40" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -50,7 +56,7 @@ const NavbarComponent = ({ onLoginClick, onRegisterClick }) => {
               <>
                 <Nav.Link
                   onClick={onLoginClick}
-                  className="btn btn-auth px-3 me-2"
+                  className="btn btn-auth px-3 mb-2 mb-lg-0 me-lg-2"
                 >
                   Iniciar Sesión
                 </Nav.Link>
