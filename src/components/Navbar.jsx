@@ -6,20 +6,21 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/authcontext";
 import logo from "../assets/ecommerce-logo-cropped.webp";
+import "../styles/Navbar.css";
 
 const NavbarComponent = ({ onLoginClick, onRegisterClick }) => {
   const { user, logout } = useContext(AuthContext);
 
   return (
     <Navbar
-      style={{ backgroundColor: "#272030" }}
+      className="custom-navbar"
       data-bs-theme="dark"
       expand="lg"
       sticky="top"
     >
       <Container>
         <Navbar.Brand as={Link} to="/" className="p-0">
-          <img src={logo} alt="Gamer Store" height="40" />
+          <img src={logo} alt="Rolling Code Gaming Store Logo" height="40" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
