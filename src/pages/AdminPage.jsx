@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { Container, Table, Button, Badge, Row, Col, Card, Modal, Form } from "react-bootstrap";
 import { GamesContext } from "../context/gamescontext";
 import Pagination from "../components/Pagination.jsx";
 import "../styles/AdminPage.css";
 
 const AdminPage = () => {
-  const { games, deleteGame, updateGame } = useContext(GamesContext);
+  const { games, deleteGame, updateGame, addGame } = useContext(GamesContext);
   const stockStatus = (stock) => {
     if (stock === 0) return { variant: "danger", text: "Sin Stock" };
     if (stock < 30) return { variant: "warning", text: "Bajo Stock" };
@@ -50,10 +50,6 @@ const AdminPage = () => {
     setCurrentPage(1);
   };
 
-  useEffect(() => {
-    localStorage.setItem("games", JSON.stringify(games));
-  }, [games]);
-
   const openEditModal = (game) => {
     setSelectedGame({ ...game });
     setOriginalGame({ ...game });
@@ -68,6 +64,10 @@ const AdminPage = () => {
       price: "",
       stock: "",
       image: "",
+      category: "",
+      description: "",
+      rating: "",
+      platform: "",
     };
 
     setSelectedGame(emptyGame);
@@ -99,12 +99,11 @@ const AdminPage = () => {
     if (!isNewGame) {
       updateGame({
         ...selectedGame,
-        id: Date.now(),
         price: Number(selectedGame.price),
         stock: Number(selectedGame.stock),
       });
     } else {
-      updateGame({
+      addGame({
         ...selectedGame,
         price: Number(selectedGame.price),
         stock: Number(selectedGame.stock),

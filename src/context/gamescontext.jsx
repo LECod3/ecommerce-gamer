@@ -5,9 +5,9 @@ import { initialGames } from "../data/Games";
 export const GamesContext = createContext();
 export const GamesContextProvider = ({ children }) => {
   const initialGamesFromStorage = JSON.parse(localStorage.getItem("games")) || [
-    ...initialGames
+    ...initialGames,
   ];
-  const [games, setGames] = useState(initialGames);
+  const [games, setGames] = useState(initialGamesFromStorage);
   const dataGames = { games, setGames };
 
   useEffect(() => {
@@ -19,14 +19,18 @@ export const GamesContextProvider = ({ children }) => {
   };
 
   const updateGame = (updatedGame) => {
-    setGames(games.map((g) => g.id === updatedGame.id ? updatedGame : g));
+    setGames(games.map((g) => (g.id === updatedGame.id ? updatedGame : g)));
   };
 
   const addGame = (newGame) => {
-    setGames([...games, { ...newGame, id: Date.now(), }, ]);
+    setGames([...games, { ...newGame, id: Date.now() }]);
   };
 
   return (
-    <GamesContext.Provider value={{ ...dataGames, deleteGame, updateGame, addGame }}>{children}</GamesContext.Provider>
+    <GamesContext.Provider
+      value={{ ...dataGames, deleteGame, updateGame, addGame }}
+    >
+      {children}
+    </GamesContext.Provider>
   );
 };
