@@ -27,7 +27,7 @@ code {
 }
 
 .navbar-nav .nav-link {
-  color: #adb5bd !important;
+  color: #adb5bd;
   transition: color 0.3s ease;
   font-family: 'Chakra Petch', sans-serif;
   text-transform: uppercase;
@@ -35,21 +35,33 @@ code {
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 .btn-auth, .navbar-nav .nav-link.btn-auth {
-  background-color: #4b0082 !important;
-  color: white !important;
-  border: none !important;
+  background-color: #4b0082;
+  color: white;
+  border: none;
   font-family: 'Chakra Petch', sans-serif;
   text-transform: uppercase;
-  transition: all 0.3s ease !important;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    padding-top: 12px ;
+    padding-bottom: 12px ;
+    padding-left: 10px ;
+  }
+  
+  .navbar-collapse {
+    padding: 15px 0;
+  }
 }
 
 .btn-auth:hover, .navbar-nav .nav-link.btn-auth:hover {
-  background-color: #6a0dad !important;
+  background-color: #6a0dad;
   filter: brightness(1.2);
-  color: white !important;
+  color: white;
   transform: translateY(-1px);
 }
