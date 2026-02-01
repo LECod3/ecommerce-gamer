@@ -28,11 +28,11 @@ function App() {
   };
   return (
     <div className="d-flex flex-column min-vh-100">
+      <Navbar
+        onLoginClick={handleShowLogin}
+        onRegisterClick={handleShowRegister}
+      />
       <div className="container flex-grow-1">
-        <Navbar
-          onLoginClick={handleShowLogin}
-          onRegisterClick={handleShowRegister}
-        />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route

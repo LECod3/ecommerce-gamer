@@ -10,7 +10,7 @@ const NavbarComponent = ({ onLoginClick, onRegisterClick }) => {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="lg">
+    <Navbar bg="dark" data-bs-theme="dark" expand="lg" sticky="top">
       <Container>
         <Navbar.Brand as={Link} to="/">
           Gamer Store
