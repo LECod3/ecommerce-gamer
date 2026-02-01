@@ -45,23 +45,24 @@ const AdminPage = () => {
     currentPage * pageSize,
   );
 
-  useEffect(() => {
+  const handleStockFilterChange = (filter) => {
+    setStockFilter(filter);
     setCurrentPage(1);
-  }, [stockFilter]);
+  };
 
   useEffect(() => {
     localStorage.setItem("games", JSON.stringify(games));
   }, [games]);
 
   const openEditModal = (game) => {
-    setSelectedGame({...game});
-    setOriginalGame({...game});
+    setSelectedGame({ ...game });
+    setOriginalGame({ ...game });
     setIsNewGame(false);
     setErrors({});
     setShowModal(true);
   };
 
-    const openAddModal = () => {
+  const openAddModal = () => {
     const emptyGame = {
       title: "",
       price: "",
@@ -74,13 +75,13 @@ const AdminPage = () => {
     setIsNewGame(true);
     setErrors({});
     setShowModal(true);
-  }
+  };
 
   const validateGame = () => {
     const newErrors = {};
 
     if (!selectedGame.title.trim()) newErrors.title = "Título requerido";
-    if (selectedGame.price === "" || selectedGame.price < 0) 
+    if (selectedGame.price === "" || selectedGame.price < 0)
       newErrors.price = "Precio inválido";
     if (selectedGame.stock === "" || selectedGame.stock < 0)
       newErrors.stock = "Stock inválido";
@@ -89,25 +90,26 @@ const AdminPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const hasChanges = JSON.stringify(selectedGame) !== JSON.stringify(originalGame);
+  const hasChanges =
+    JSON.stringify(selectedGame) !== JSON.stringify(originalGame);
 
   const handleSaveChanges = () => {
     if (!validateGame()) return;
 
     if (!isNewGame) {
-    updateGame({
-      ...selectedGame,
-      id: Date.now(),
-      price: Number(selectedGame.price),
-      stock: Number(selectedGame.stock),
-    });
-  } else {
-    updateGame({
-      ...selectedGame,
-      price: Number(selectedGame.price),
-      stock: Number(selectedGame.stock),
-    });
-  }
+      updateGame({
+        ...selectedGame,
+        id: Date.now(),
+        price: Number(selectedGame.price),
+        stock: Number(selectedGame.stock),
+      });
+    } else {
+      updateGame({
+        ...selectedGame,
+        price: Number(selectedGame.price),
+        stock: Number(selectedGame.stock),
+      });
+    }
     setShowModal(false);
   };
 
@@ -234,10 +236,7 @@ const AdminPage = () => {
             <Button
               variant={stockFilter === "all" ? "primary" : "outline-primary"}
               size="sm"
-              onClick={() => {
-                setStockFilter("all");
-                setCurrentPage(1);
-              }}
+              onClick={() => handleStockFilterChange("all")}
             >
               Todos
             </Button>
@@ -247,10 +246,7 @@ const AdminPage = () => {
                 stockFilter === "abundantStock" ? "success" : "outline-success"
               }
               size="sm"
-              onClick={() => {
-                setStockFilter("abundantStock");
-                setCurrentPage(1);
-              }}
+              onClick={() => handleStockFilterChange("abundantStock")}
             >
               Abundante Stock
             </Button>
@@ -260,10 +256,7 @@ const AdminPage = () => {
                 stockFilter === "lowStock" ? "warning" : "outline-warning"
               }
               size="sm"
-              onClick={() => {
-                setStockFilter("lowStock");
-                setCurrentPage(1);
-              }}
+              onClick={() => handleStockFilterChange("lowStock")}
             >
               Poco stock
             </Button>
@@ -273,10 +266,7 @@ const AdminPage = () => {
                 stockFilter === "outOfStock" ? "danger" : "outline-danger"
               }
               size="sm"
-              onClick={() => {
-                setStockFilter("outOfStock");
-                setCurrentPage(1);
-              }}
+              onClick={() => handleStockFilterChange("outOfStock")}
             >
               Sin stock
             </Button>
@@ -305,7 +295,9 @@ const AdminPage = () => {
                     setSelectedGame({ ...selectedGame, title: e.target.value })
                   }
                 />
-                {errors.title && <small className="text-danger">{errors.title}</small>}
+                {errors.title && (
+                  <small className="text-danger">{errors.title}</small>
+                )}
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -317,7 +309,9 @@ const AdminPage = () => {
                     setSelectedGame({ ...selectedGame, price: e.target.value })
                   }
                 />
-                 {errors.price && <small className="text-danger">{errors.price}</small>}
+                {errors.price && (
+                  <small className="text-danger">{errors.price}</small>
+                )}
               </Form.Group>
 
               <Form.Group>
@@ -329,7 +323,9 @@ const AdminPage = () => {
                     setSelectedGame({ ...selectedGame, stock: e.target.value })
                   }
                 />
-                 {errors.stock && <small className="text-danger">{errors.stock}</small>}
+                {errors.stock && (
+                  <small className="text-danger">{errors.stock}</small>
+                )}
               </Form.Group>
             </Form>
           )}
@@ -339,7 +335,11 @@ const AdminPage = () => {
           <Button variant="secondary" onClick={() => setShowModal(false)}>
             Cancelar
           </Button>
-          <Button variant="primary" onClick={handleSaveChanges} disabled={!hasChanges}>
+          <Button
+            variant="primary"
+            onClick={handleSaveChanges}
+            disabled={!hasChanges}
+          >
             Guardar cambios
           </Button>
         </Modal.Footer>

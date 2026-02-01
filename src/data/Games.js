@@ -40,7 +40,9 @@ export const initialGames = [
         rating: 5,
         comment: "Muy buen juego, gráficos increíbles.",
       },
-      { user: "Martina", rating: 4, comment: "La historia es buenísima." },
+      { user: "Martina",
+        rating: 4,
+        comment: "La historia es buenísima." },
     ],
   },
   {
@@ -267,8 +269,8 @@ export const initialGames = [
 • Sistema de honor que influye en cómo reacciona el mundo ante ti.
 • Caza, pesca, juega póker o simplemente explora la frontera.
 • Una narrativa cinematográfica inigualable.`,
-    image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
-    gallery: [],
+    image: "https://i.postimg.cc/vZPvLqyc/rdr2-2.webp",
+    gallery: ["https://i.postimg.cc/yxzhY2mf/rdr-2-3.webp","https://i.postimg.cc/zfVFdCDB/rdr2-1.webp", "https://i.postimg.cc/13WKcCSt/rdr2-4.webp"],
     developer: "Rockstar Games",
     platform: "PC",
     mode: "Un Jugador / Online",
@@ -501,6 +503,13 @@ export const initialGames = [
 • Explora cuevas misteriosas y lucha contra monstruos.
 • Juega con hasta 3 amigos en modo cooperativo.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i3-3220",
+      memory: "4 GB RAM",
+      graphics: "Intel HD Graphics 4000",
+    },
     developer: "ConcernedApe",
     platform: "PC / Switch",
     mode: "Un Jugador / Cooperativo",
@@ -508,6 +517,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 16,
@@ -526,6 +536,13 @@ export const initialGames = [
 • Modo online con eventos multijugador masivos.
 • Editor de eventos para crear tus propias pistas.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel i5-4460",
+      memory: "8 GB RAM",
+      graphics: "GTX 970",
+    },
     developer: "Playground Games",
     platform: "PC / Xbox",
     mode: "Multijugador",
@@ -533,6 +550,7 @@ export const initialGames = [
     highlighted: true,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 17,
@@ -551,6 +569,13 @@ export const initialGames = [
 • Sistema de pases de batalla con cosméticos exclusivos.
 • Eventos estacionales y actualizaciones constantes.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i3",
+      memory: "6 GB RAM",
+      graphics: "GTX 660",
+    },
     developer: "Blizzard Entertainment",
     platform: "PC / Consolas",
     mode: "Multijugador",
@@ -558,6 +583,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: true,
+    reviews: [],
   },
   {
     id: 18,
@@ -576,6 +602,13 @@ export const initialGames = [
 • Sistema de rangos competitivo para demostrar tu habilidad.
 • Optimizado para un alto rendimiento en una gran variedad de PC.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel i3-370M",
+      memory: "4 GB RAM",
+      graphics: "Intel HD 3000",
+    },
     developer: "Riot Games",
     platform: "PC",
     mode: "Multijugador",
@@ -583,6 +616,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 19,
@@ -600,6 +634,13 @@ export const initialGames = [
 • Eventos mundiales y jefes masivos para grupos de jugadores.
 • Modo Jugador contra Jugador (PvP) en los Campos del Odio.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i5-2500K",
+      memory: "8 GB RAM",
+      graphics: "GTX 660",
+    },
     developer: "Blizzard Entertainment",
     platform: "PC / Consolas",
     mode: "Un Jugador / Multijugador",
@@ -607,6 +648,7 @@ export const initialGames = [
     highlighted: true,
     onSale: false,
     isNew: true,
+    reviews: [],
   },
   {
     id: 20,
@@ -624,6 +666,13 @@ export const initialGames = [
 • Juega solo o en cooperativo de hasta 4 jugadores.
 • Un mundo reactivo que responde a tu creatividad.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel I5 4690",
+      memory: "8 GB RAM",
+      graphics: "GTX 970",
+    },
     developer: "Larian Studios",
     platform: "PC / PS5",
     mode: "Un Jugador / Cooperativo",
@@ -631,6 +680,7 @@ export const initialGames = [
     highlighted: true,
     onSale: false,
     isNew: true,
+    reviews: [],
   },
   {
     id: 21,
@@ -649,6 +699,13 @@ export const initialGames = [
 • Sistema de asentamientos en diferentes planetas.
 • Combate espacial y terrestre contra piratas y mercenarios.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "AMD Ryzen 5 2600X",
+      memory: "16 GB RAM",
+      graphics: "AMD Radeon RX 5700",
+    },
     developer: "Bethesda",
     platform: "PC / Xbox",
     mode: "Un Jugador",
@@ -656,6 +713,7 @@ export const initialGames = [
     highlighted: true,
     onSale: false,
     isNew: true,
+    reviews: [],
   },
   {
     id: 22,
@@ -674,6 +732,13 @@ export const initialGames = [
 • El modo "Mercenarios" ofrece retos rápidos de puntuación.
 • Impresionantes gráficos con soporte para Ray Tracing.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i5-7500",
+      memory: "8 GB RAM",
+      graphics: "GTX 1050 Ti",
+    },
     developer: "Capcom",
     platform: "PC",
     mode: "Un Jugador",
@@ -681,6 +746,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 23,
@@ -698,6 +764,13 @@ export const initialGames = [
 • Incluye el Pase de Amigo para jugar con alguien sin comprarlo.
 • Ganador del Juego del Año 2021.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i3-2100T",
+      memory: "8 GB RAM",
+      graphics: "GTX 660",
+    },
     developer: "Hazelight",
     platform: "PC",
     mode: "Cooperativo obligatorio",
@@ -705,6 +778,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 24,
@@ -723,6 +797,13 @@ export const initialGames = [
 • Navegación continua sin pantallas de carga por toda la nave.
 • Historia expandida con diálogos para el protagonista Isaac.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Ryzen 5 2600x",
+      memory: "16 GB RAM",
+      graphics: "RX 5700",
+    },
     developer: "Motive Studio",
     platform: "PC",
     mode: "Un Jugador",
@@ -730,6 +811,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: true,
+    reviews: [],
   },
   {
     id: 25,
@@ -747,6 +829,13 @@ export const initialGames = [
 • Gráficos realistas y vibrantes con el motor RE Engine.
 • Controles simplificados para nuevos jugadores opcionales.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i5-7500",
+      memory: "8 GB RAM",
+      graphics: "GTX 1060",
+    },
     developer: "Capcom",
     platform: "PC",
     mode: "Multijugador",
@@ -754,6 +843,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: true,
+    reviews: [],
   },
   {
     id: 26,
@@ -771,6 +861,13 @@ export const initialGames = [
 • Diálogos humorísticos y una historia cautivadora.
 • Editor de niveles para descargar miles de cámaras extra.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Dual Core 2.0",
+      memory: "2 GB RAM",
+      graphics: "NVIDIA GeForce 7600",
+    },
     developer: "Valve",
     platform: "PC",
     mode: "Un Jugador / Cooperativo",
@@ -778,6 +875,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 27,
@@ -796,6 +894,13 @@ export const initialGames = [
 • Puzles ambientales complejos que usan tus manos reales.
 • El referente absoluto de calidad en juegos de realidad virtual.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Core i5-7500",
+      memory: "12 GB RAM",
+      graphics: "GTX 1060",
+    },
     developer: "Valve",
     platform: "PC VR",
     mode: "Un Jugador",
@@ -803,6 +908,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 28,
@@ -820,6 +926,13 @@ export const initialGames = [
 • Construye ciudades para atraer a diferentes personajes (NPCs).
 • Contenido inmenso con biomas secretos y retos constantes.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "2.0 Ghz",
+      memory: "2.5 GB RAM",
+      graphics: "128mb Video Memory",
+    },
     developer: "Re-Logic",
     platform: "PC",
     mode: "Multijugador",
@@ -827,6 +940,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 29,
@@ -844,6 +958,13 @@ export const initialGames = [
 • Personalización de personajes con sombreros y mascotas.
 • Soporta cross-play entre PC, consolas y dispositivos móviles.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "SSE2 instruction set support",
+      memory: "1 GB RAM",
+      graphics: "Integrated",
+    },
     developer: "Innersloth",
     platform: "PC / Móvil",
     mode: "Multijugador",
@@ -851,6 +972,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 30,
@@ -869,6 +991,13 @@ export const initialGames = [
 • Un mundo lleno de otros barcos de jugadores y peligros marinos.
 • Progresión cosmética: tu reputación es lo que importa.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Q9450",
+      memory: "4 GB RAM",
+      graphics: "GTX 650",
+    },
     developer: "Rare",
     platform: "PC / Xbox",
     mode: "Multijugador",
@@ -876,6 +1005,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 31,
@@ -893,6 +1023,13 @@ export const initialGames = [
 • Domina la tecnología: desde arcos de piedra hasta fusiles de asalto.
 • Forma clanes para dominar los recursos de la isla.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i7-3770",
+      memory: "10 GB RAM",
+      graphics: "GTX 670",
+    },
     developer: "Facepunch Studios",
     platform: "PC",
     mode: "Multijugador",
@@ -900,6 +1037,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 32,
@@ -918,6 +1056,13 @@ export const initialGames = [
 • Guía a tus Sims a través de las diferentes etapas de la vida.
 • Cientos de expansiones y packs de accesorios disponibles.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i5",
+      memory: "4 GB RAM",
+      graphics: "NVIDIA GTX 650",
+    },
     developer: "Maxis",
     platform: "PC",
     mode: "Un Jugador",
@@ -925,6 +1070,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 33,
@@ -942,6 +1088,13 @@ export const initialGames = [
 • Sistema de transporte y carreteras avanzado.
 • Herramientas de planificación urbana potentes y flexibles.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i7-6700K",
+      memory: "8 GB RAM",
+      graphics: "GTX 970",
+    },
     developer: "Colossal Order",
     platform: "PC",
     mode: "Un Jugador",
@@ -966,6 +1119,13 @@ export const initialGames = [
 • Multijugador competitivo y modo cooperativo contra la IA.
 • Herramientas de aprendizaje para dominar la estrategia básica y avanzada.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel i5-6300U",
+      memory: "8 GB RAM",
+      graphics: "Intel HD 520",
+    },
     developer: "Relic Entertainment",
     platform: "PC",
     mode: "Un Jugador / Multijugador",
@@ -991,6 +1151,13 @@ export const initialGames = [
 • Diplomacia dinámica que evoluciona a lo largo del juego.
 • Diferentes rutas hacia la victoria: Militar, Científica o Religiosa.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Intel Core i3",
+      memory: "4 GB RAM",
+      graphics: "GeForce 450",
+    },
     developer: "Firaxis Games",
     platform: "PC",
     mode: "Un Jugador / Multijugador",
@@ -1016,6 +1183,13 @@ export const initialGames = [
 • Traduce textos antiguos para entender a una raza desaparecida.
 • Una de las mejores experiencias de descubrimiento puro en videojuegos.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Intel Core i5-2300",
+      memory: "4 GB RAM",
+      graphics: "GTX 560",
+    },
     developer: "Mobius Digital",
     platform: "PC",
     mode: "Un Jugador",
@@ -1041,6 +1215,13 @@ export const initialGames = [
 • Sistema de progresión basado en el conocimiento, no solo en estadísticas.
 • Desafío constante con puzles ambientales ingeniosos.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel i5 Quad-Core",
+      memory: "8 GB RAM",
+      graphics: "GTX 660",
+    },
     developer: "TUNIC Team",
     platform: "PC",
     mode: "Un Jugador",
@@ -1065,6 +1246,13 @@ export const initialGames = [
 • Sistema de progresión permanente que te hace más fuerte tras cada muerte.
 • Estilo visual y banda sonora espectaculares.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Dual-Core 3.0 Ghz",
+      memory: "8 GB RAM",
+      graphics: "1 GB VRAM",
+    },
     developer: "Supergiant Games",
     platform: "PC",
     mode: "Un Jugador",
@@ -1072,6 +1260,18 @@ export const initialGames = [
     highlighted: true,
     onSale: false,
     isNew: true,
+    reviews: [
+      {
+        user: "Juan",
+        rating: 5,
+        comment: "Excelente juego",
+      },
+      {
+        user: "Maria",
+        rating: 4,
+        comment: "Muy buen juego",
+      },
+    ],
   },
   {
     id: 39,
@@ -1089,6 +1289,13 @@ export const initialGames = [
 • Banda sonora original de jazz grabada por una orquesta real.
 • Modo cooperativo local para jugar con un amigo.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Intel Core2 Duo E8400",
+      memory: "4 GB RAM",
+      graphics: "Geforce 9600 GT",
+    },
     developer: "Studio MDHR",
     platform: "PC",
     mode: "Multijugador local",
@@ -1096,6 +1303,18 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [
+      {
+        user: "Juan",
+        rating: 5,
+        comment: "Excelente juego",
+      },
+      {
+        user: "Maria",
+        rating: 4,
+        comment: "Muy buen juego",
+      },
+    ],
   },
   {
     id: 40,
@@ -1113,6 +1332,13 @@ export const initialGames = [
 • Biomas variados desde bosques tranquilos hasta montañas heladas.
 • Cooperativo de hasta 10 jugadores en servidores dedicados.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "2.6 Ghz Dual Core",
+      memory: "4 GB RAM",
+      graphics: "GTX 500 series",
+    },
     developer: "Iron Gate AB",
     platform: "PC",
     mode: "Multijugador",
@@ -1137,6 +1363,13 @@ export const initialGames = [
 • Personajes carismáticos que recordarás para siempre.
 • La banda sonora se ha convertido en un fenómeno cultural.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows XP",
+      processor: "2GHz+",
+      memory: "2 GB RAM",
+      graphics: "128MB",
+    },
     developer: "tobyfox",
     platform: "PC",
     mode: "Un Jugador",
@@ -1144,6 +1377,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 42,
@@ -1161,6 +1395,13 @@ export const initialGames = [
 • Cientos de armas y hechizos para probar diferentes 'builds'.
 • Permadeath: aprende de tus errores en cada intento.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Intel i5+",
+      memory: "2 GB RAM",
+      graphics: "GTX 460",
+    },
     developer: "Motion Twin",
     platform: "PC",
     mode: "Un Jugador",
@@ -1168,6 +1409,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 43,
@@ -1185,6 +1427,13 @@ export const initialGames = [
 • Cientos de reliquias que potencian tus cartas de formas inesperadas.
 • Modo ascensión para jugadores expertos que buscan el desafío máximo.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows XP",
+      processor: "2.0 Ghz",
+      memory: "2 GB RAM",
+      graphics: "128mb Video Memory",
+    },
     developer: "Mega Crit Games",
     platform: "PC",
     mode: "Un Jugador",
@@ -1192,6 +1441,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 44,
@@ -1209,6 +1459,13 @@ export const initialGames = [
 • Equipamiento profesional como cámaras térmicas y cajas espirituales.
 • Tensión psicológica constante sin recurrir a 'jumpscares' fáciles.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i5-4590",
+      memory: "8 GB RAM",
+      graphics: "GTX 970",
+    },
     developer: "Kinetic Games",
     platform: "PC",
     mode: "Multijugador",
@@ -1216,6 +1473,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 45,
@@ -1233,6 +1491,13 @@ export const initialGames = [
 • Peligros nocturnos que cambian según la luna.
 • Un éxito viral que mezcla risas y gritos a partes iguales.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel Core i5-7400",
+      memory: "4 GB RAM",
+      graphics: "GTX 1050",
+    },
     developer: "Zeekerss",
     platform: "PC",
     mode: "Multijugador",
@@ -1240,6 +1505,7 @@ export const initialGames = [
     highlighted: true,
     onSale: false,
     isNew: true,
+    reviews: [],
   },
   {
     id: 46,
@@ -1257,6 +1523,13 @@ export const initialGames = [
 • Fabrica prótesis, entrena animales y gestiona suministros médicos.
 • Un juego infinito gracias a su enorme soporte para mods.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Core 2 Duo",
+      memory: "4 GB RAM",
+      graphics: "Intel HD Graphics 4000",
+    },
     developer: "Ludeon Studios",
     platform: "PC",
     mode: "Un Jugador",
@@ -1264,6 +1537,7 @@ export const initialGames = [
     highlighted: false,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
   {
     id: 47,
@@ -1281,6 +1555,13 @@ export const initialGames = [
 • Mundo masivo para explorar con coches y multijugador online.
 • Un nivel de detalle inigualable en la mecánica de supervivencia.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 10",
+      processor: "Intel 2.77GHz Quad-core",
+      memory: "8 GB RAM",
+      graphics: "2GB VRAM",
+    },
     developer: "The Indie Stone",
     platform: "PC",
     mode: "Multijugador",
@@ -1288,6 +1569,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 48,
@@ -1305,6 +1587,13 @@ export const initialGames = [
 • Fabrica armas y trampas para defenderte de los nativos.
 • Juega solo o en cooperativo con amigos.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Intel Dual-Core 2.4 GHz",
+      memory: "4 GB RAM",
+      graphics: "NVIDIA GeForce 8800GT",
+    },
     developer: "Endnight Games",
     platform: "PC",
     mode: "Un Jugador / Cooperativo",
@@ -1312,6 +1601,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 49,
@@ -1329,6 +1619,13 @@ export const initialGames = [
 • Modo cooperativo online para cazar en grupo de 4.
 • Actualizaciones constantes con nuevos monstruos y colaboraciones.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Intel Core i5-4460",
+      memory: "8 GB RAM",
+      graphics: "GTX 760",
+    },
     developer: "Capcom",
     platform: "PC",
     mode: "Multijugador",
@@ -1336,6 +1633,7 @@ export const initialGames = [
     highlighted: false,
     onSale: true,
     isNew: false,
+    reviews: [],
   },
   {
     id: 50,
@@ -1353,6 +1651,13 @@ export const initialGames = [
 • Sigilo y verticalidad únicos en los juegos de FromSoftware.
 • Una de las curvas de dificultad más gratificantes del género.`,
     image: "https://i.postimg.cc/tJMmRTfG/proximamente.webp",
+    gallery: [],
+    requirements: {
+      os: "Windows 7",
+      processor: "Intel Core i3-2100",
+      memory: "4 GB RAM",
+      graphics: "GTX 760",
+    },
     developer: "FromSoftware",
     platform: "PC",
     mode: "Un Jugador",
@@ -1360,5 +1665,6 @@ export const initialGames = [
     highlighted: true,
     onSale: false,
     isNew: false,
+    reviews: [],
   },
 ];
