@@ -1,4 +1,5 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+import aboutUsLogo from "../assets/about-us-logo-cropped.webp";
 import "../styles/AboutUs.css";
 
 const AboutSection = () => {
@@ -9,7 +10,7 @@ const AboutSection = () => {
           <Col md={6} className="about-image-col">
             <div className="about-image-wrapper">
               <img
-                src="/img/about.jpg"
+                src={aboutUsLogo}
                 alt="About us"
                 className="about-image"
               />

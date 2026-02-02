@@ -1,0 +1,14 @@
+.footer-download-btn {
+  background-color: #7e22ce;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.footer-download-btn:hover {
+  background-color: #9333ea;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+}

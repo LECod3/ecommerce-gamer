@@ -11,17 +11,17 @@ const TeamSection = () => {
         <Row className="justify-content-center g-5">
           <Col md={4} sm={6}>
             <TeamCard
-              name="Francisco Andrade"
+              name="Luciano Caro"
               img="/img/team1.jpg"
-              text="Desarrollador frontend y amante del diseño gamer."
+              text="Desarrollador"
             />
           </Col>
 
           <Col md={4} sm={6}>
             <TeamCard
-              name="Alfredo Torres"
+              name="Alexis Arreyes"
               img="/img/team2.jpg"
-              text="Backend developer con foco en rendimiento."
+              text="Desarrollador"
             />
           </Col>
         </Row>

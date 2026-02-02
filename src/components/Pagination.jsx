@@ -39,7 +39,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pageNumbers = getPageNumbers();
 
   return (
-    <nav className="mt-4">
+    <nav className="mt-3">
       <ul className="pagination pagination-sm justify-content-center flex-wrap">
         <li className={`page-item ${currentPage === 1 && "disabled"}`}>
           <button

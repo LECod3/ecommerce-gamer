@@ -1,35 +1,31 @@
 :root {
-  --bg-dark: #05010d;
+  --bg-dark: #0A011B;
   --bg-card: #0b061a;
   --neon-pink: #d400ff;
   --neon-purple: #8f00ff;
   --text-muted: #b5b5c3;
 }
 
-/* ===== ABOUT SECTION ===== */
 .about-section {
   background: var(--bg-dark);
   color: white;
-  padding: 100px 0;
+  padding: 1%;
 }
 
 .about-image-wrapper {
-  transform: skewX(-10deg);
   overflow: hidden;
 }
 
 .about-image {
   width: 100%;
-  transform: skewX(10deg) scale(1.1);
-  transition: transform 0.4s ease;
-}
-
-.about-image-wrapper:hover .about-image {
-  transform: skewX(10deg) scale(1.2);
 }
 
 .about-content h2 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
   font-size: 42px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   position: relative;
 }
 
@@ -47,7 +43,6 @@
   max-width: 400px;
 }
 
-/* ===== BUTTON ===== */
 .neon-btn {
   background: var(--neon-pink);
   border: none;
@@ -60,11 +55,17 @@
   box-shadow: 0 0 15px var(--neon-pink);
 }
 
-/* ===== TEAM SECTION ===== */
 .team-section {
   background: var(--bg-dark);
   color: white;
   padding: 100px 0;
+}
+
+.team-section h2 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .team-card {
@@ -79,6 +80,9 @@
 }
 
 .team-card h4 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
   margin-top: 20px;
   color: var(--neon-pink);
 }

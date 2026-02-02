@@ -1,6 +1,7 @@
 import { Container, Row, Col, Button, Nav, InputGroup, Form } from "react-bootstrap";
 import { FaFacebook, FaTwitter, FaLinkedin, FaDiscord, FaCcVisa, FaCcMastercard, FaPaypal, } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "../styles/Footer.css";
 
 const Footer = () => {
   return (
@@ -113,15 +114,7 @@ const Footer = () => {
           <Col className="d-flex justify-content-md">
             <Button
               variant="custom"
-              className="text-white px-4 py-2 d-flex align-items-center gap-2 shadow-sm"
-              style={{
-                backgroundColor: "#7e22ce",
-                border: "none",
-                fontWeight: "500",
-                transition: "background-color 0.2s",
-              }}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#9333ea")}
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#7e22ce")}
+              className="text-white px-4 py-2 d-flex align-items-center gap-2 shadow-sm footer-download-btn"
             >
               <i className="bi bi-download"></i>
               Descargue nuestra aplicación de escritorio
@@ -157,7 +150,7 @@ const Footer = () => {
             </Link>
           </Col>
           <Col md={5} className="text-md-end">
-            <p className="m-0 text-muted" style={{ fontSize: "0.8rem" }}>
+            <p className="m-0 text-muted footer-copyright">
               © 2024 Gamer Store. Todos los derechos reservados.
             </p>
           </Col>

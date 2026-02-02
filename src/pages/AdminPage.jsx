@@ -231,44 +231,34 @@ const AdminPage = () => {
             </tbody>
           </Table>
 
-          <div className="d-flex justify-content-center gap-2 mt-3">
-            <Button
-              variant={stockFilter === "all" ? "primary" : "outline-primary"}
-              size="sm"
+          <div className="admin-filter-group">
+            <button
+              className={`admin-filter-btn btn-filter-all ${stockFilter === "all" ? "active" : ""}`}
               onClick={() => handleStockFilterChange("all")}
             >
               Todos
-            </Button>
+            </button>
 
-            <Button
-              variant={
-                stockFilter === "abundantStock" ? "success" : "outline-success"
-              }
-              size="sm"
+            <button
+              className={`admin-filter-btn btn-filter-abundant ${stockFilter === "abundantStock" ? "active" : ""}`}
               onClick={() => handleStockFilterChange("abundantStock")}
             >
               Abundante Stock
-            </Button>
+            </button>
 
-            <Button
-              variant={
-                stockFilter === "lowStock" ? "warning" : "outline-warning"
-              }
-              size="sm"
+            <button
+              className={`admin-filter-btn btn-filter-low ${stockFilter === "lowStock" ? "active" : ""}`}
               onClick={() => handleStockFilterChange("lowStock")}
             >
               Poco stock
-            </Button>
+            </button>
 
-            <Button
-              variant={
-                stockFilter === "outOfStock" ? "danger" : "outline-danger"
-              }
-              size="sm"
+            <button
+              className={`admin-filter-btn btn-filter-out ${stockFilter === "outOfStock" ? "active" : ""}`}
               onClick={() => handleStockFilterChange("outOfStock")}
             >
               Sin stock
-            </Button>
+            </button>
           </div>
 
           <Pagination
