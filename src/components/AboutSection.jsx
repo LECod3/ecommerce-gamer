@@ -3,6 +3,12 @@ import aboutUsLogo from "../assets/about-us-logo-cropped.webp";
 import "../styles/AboutUs.css";
 
 const AboutSection = () => {
+
+  const scrollToTeam = () => {
+    const section = document.getElementById("team");
+    section.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="about-section">
       <Container fluid>
@@ -23,7 +29,10 @@ const AboutSection = () => {
               Somos un equipo apasionado por los videojuegos y la tecnología.
               Esperamos poder crear mejores proyectos que estos y nunca dejar de mejorar en la programación.
             </p>
-            <Button className="neon-btn">Más Información</Button>
+
+            <Button className="neon-btn" onClick={scrollToTeam}>
+              Más Información
+            </Button>
           </Col>
         </Row>
       </Container>

@@ -4,7 +4,7 @@ import "../styles/AboutUs.css";
 
 const TeamSection = () => {
   return (
-    <section className="team-section">
+    <section className="team-section" id="team">
       <Container>
         <h2 className="text-center mb-5">Conoce a nuestro equipo</h2>
 
