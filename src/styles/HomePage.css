@@ -19,6 +19,40 @@
   text-shadow: 0 0 15px rgba(106, 13, 173, 0.6);
 }
 
+h3 {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.home-container .form-control,
+.home-container .form-select {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.home-container .form-control::placeholder {
+  color: #666;
+}
+
+.home-container .form-control:focus,
+.home-container .form-select:focus {
+  background-color: #252525;
+  border-color: #6a0dad;
+  box-shadow: 0 0 10px rgba(106, 13, 173, 0.4);
+}
+
+.home-container .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%236a0dad' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
 .home-container {
   min-height: 100vh;
 }

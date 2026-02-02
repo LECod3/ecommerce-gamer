@@ -1,0 +1,41 @@
+.pagination {
+  gap: 5px;
+}
+
+.pagination .page-link {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #adb5bd;
+  padding: 0.5rem 0.8rem;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 35px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.pagination .page-link:hover {
+  background-color: #252525;
+  border-color: #6a0dad;
+  color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(106, 13, 173, 0.5);
+}
+
+.pagination .page-item.disabled .page-link {
+  background-color: #121212;
+  border-color: #222;
+  color: #444;
+  cursor: not-allowed;
+}
+
+.pagination .page-link:focus {
+  box-shadow: 0 0 10px rgba(106, 13, 173, 0.3);
+  outline: none;
+}

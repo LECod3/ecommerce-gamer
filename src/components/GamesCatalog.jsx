@@ -40,13 +40,13 @@ const GamesCatalog = () => {
 
   return (
     <div className="container my-5">
-      <div className="d-flex justify-content-between align-items-center mb-4">
+      <div className="mb-5 text-center">
         <h3>Todos los juegos</h3>
 
-        <div className="d-flex gap-2 w-100 w-md-50">
+        <div className="d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center mt-4">
           <input
             type="text"
-            className="form-control"
+            className="form-control w-100 w-md-50"
             placeholder="Buscar juegos..."
             value={search}
             onChange={(e) => {
@@ -55,33 +55,36 @@ const GamesCatalog = () => {
             }}
           />
 
-          <select
-            className="form-select w-auto"
-            value={pageSize}
-            onChange={(e) => {
-              setPageSize(Number(e.target.value));
-              setCurrentPage(1);
-            }}
-          >
-            <option value={6}>6 por paginás</option>
-            <option value={12}>12 por paginás</option>
-            <option value={24}>24 por paginás</option>
-          </select>
+          <div className="d-flex gap-2 w-100 w-md-auto">
+            <select
+              className="form-select"
+              value={pageSize}
+              onChange={(e) => {
+                setPageSize(Number(e.target.value));
+                setCurrentPage(1);
+              }}
+            >
+              <option value={4}>4 por página</option>
+              <option value={8}>8 por página</option>
+              <option value={12}>12 por página</option>
+            </select>
 
-          <select
-            className="form-select w-25"
-            value={category}
-            onChange={(e) => {
-              setCategory(e.target.value);
-              setCurrentPage(1);
-            }}
-          >
-            {categories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat === "all" ? "Todas" : cat}
-              </option>
-            ))}
-          </select>
+            <select
+              className="form-select"
+              style={{ minWidth: "150px" }}
+              value={category}
+              onChange={(e) => {
+                setCategory(e.target.value);
+                setCurrentPage(1);
+              }}
+            >
+              {categories.map((cat) => (
+                <option key={cat} value={cat}>
+                  {cat === "all" ? "Todas las categorías" : cat}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
