@@ -10,7 +10,7 @@ const GamesCatalog = () => {
   const [category, setCategory] = useState("all");
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(6);
+  const [pageSize, setPageSize] = useState(4);
 
   const categories = [
     "all",

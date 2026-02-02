@@ -12,7 +12,7 @@ const HomePage = () => {
     <>
       <div className="home-container">
         <header className="home-header">
-          <h1 className="home-title">Juegos Destacados</h1>
+          <h1 className="home-title">Recomendados</h1>
         </header>
         <HeroCarousel />
         {/* Juegos en promoción */}

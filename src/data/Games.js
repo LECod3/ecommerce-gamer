@@ -73,7 +73,7 @@ export const initialGames = [
     },
     highlighted: false,
     onSale: true,
-    isNew: false,
+    isNew: true,
     reviews: [],
   },
   {
@@ -106,7 +106,7 @@ export const initialGames = [
     },
     highlighted: true,
     onSale: true,
-    isNew: false,
+    isNew: true,
     reviews: [],
   },
   {
@@ -139,7 +139,7 @@ export const initialGames = [
     },
     highlighted: false,
     onSale: true,
-    isNew: false,
+    isNew: true,
     reviews: [],
   },
   {
@@ -1261,7 +1261,7 @@ export const initialGames = [
     languages: "Español / Inglés",
     highlighted: true,
     onSale: false,
-    isNew: true,
+    isNew: false,
     reviews: [
       {
         user: "Juan",
@@ -1506,7 +1506,7 @@ export const initialGames = [
     languages: "Inglés",
     highlighted: true,
     onSale: false,
-    isNew: true,
+    isNew: false,
     reviews: [],
   },
   {
