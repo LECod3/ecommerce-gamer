@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Carousel } from "react-bootstrap";
 import "../styles/HeroCarrousel.css";
 import { GamesContext } from "../context/gamescontext";

@@ -1,6 +1,5 @@
-import React from "react";
 import { Container, Row, Col, Button, Nav, InputGroup, Form } from "react-bootstrap";
-import { FaFacebook, FaTwitter, FaLinkedin, FaDiscord, FaCcVisa, FaCcMastercard, FaPaypal } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaLinkedin, FaDiscord, FaCcVisa, FaCcMastercard, FaPaypal, } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

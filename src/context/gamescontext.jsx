@@ -4,9 +4,15 @@ import { initialGames } from "../data/Games";
 // eslint-disable-next-line react-refresh/only-export-components
 export const GamesContext = createContext();
 export const GamesContextProvider = ({ children }) => {
-  const initialGamesFromStorage = JSON.parse(localStorage.getItem("games")) || [
-    ...initialGames,
-  ];
+  const initialGamesFromStorage = JSON.parse(
+    localStorage.getItem("games"),
+  )?.map((game) => {
+    if (typeof game.category === "string") {
+      return { ...game, category: game.category.split(" / ") };
+    }
+    return game;
+  }) || [...initialGames];
+
   const [games, setGames] = useState(initialGamesFromStorage);
   const dataGames = { games, setGames };
 

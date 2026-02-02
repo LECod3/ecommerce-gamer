@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import GameCard from "./GameCard";
 import { GamesContext } from "../context/gamescontext.jsx";
 import Pagination from "./Pagination.jsx";
@@ -12,12 +12,19 @@ const GamesCatalog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(6);
 
-  const categories = ["all", ...new Set(games.map((game) => game.category))];
+  const categories = [
+    "all",
+    ...new Set(games.flatMap((game) => game.category)),
+  ].sort();
 
   const filteredGames = games.filter((game) => {
     const matchTitle = game.title.toLowerCase().includes(search.toLowerCase());
 
-    const matchCategory = category === "all" || game.category === category;
+    const matchCategory =
+      category === "all" ||
+      (Array.isArray(game.category)
+        ? game.category.includes(category)
+        : game.category === category);
 
     return matchTitle && matchCategory;
   });
@@ -31,10 +38,6 @@ const GamesCatalog = () => {
   const start = (currentPage - 1) * pageSize + 1;
   const end = Math.min(currentPage * pageSize, filteredGames.length);
 
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [search, category, pageSize]);
-
   return (
     <div className="container my-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
@@ -46,13 +49,19 @@ const GamesCatalog = () => {
             className="form-control"
             placeholder="Buscar juegos..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => {
+              setSearch(e.target.value);
+              setCurrentPage(1);
+            }}
           />
 
           <select
             className="form-select w-auto"
             value={pageSize}
-            onChange={(e) => setPageSize(Number(e.target.value))}
+            onChange={(e) => {
+              setPageSize(Number(e.target.value));
+              setCurrentPage(1);
+            }}
           >
             <option value={6}>6 por paginás</option>
             <option value={12}>12 por paginás</option>
@@ -62,7 +71,10 @@ const GamesCatalog = () => {
           <select
             className="form-select w-25"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => {
+              setCategory(e.target.value);
+              setCurrentPage(1);
+            }}
           >
             {categories.map((cat) => (
               <option key={cat} value={cat}>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Carousel, Card, Button } from "react-bootstrap";
 import { GamesContext } from "../context/gamescontext";
@@ -15,7 +15,6 @@ const FeaturedCarousel = ({ title, filterType }) => {
 
   return (
     <div className="my-5">
-      {/* Título del carrusel */}
       <h3 className="mb-3">{title}</h3>
 
       <Carousel indicators={false}>
@@ -33,16 +32,12 @@ const FeaturedCarousel = ({ title, filterType }) => {
                 </Link>
 
                 <Card.Body>
-                  <Card.Title className="fw-bold">
-                    {game.title}
-                  </Card.Title>
+                  <Card.Title className="fw-bold">{game.title}</Card.Title>
 
-                  {/* Precio */}
                   <Card.Text className="fw-bold text-success">
                     ${game.price}
                   </Card.Text>
 
-                  {/* Botón */}
                   <Link to={`/game/${game.code}`}>
                     <Button variant="primary" size="sm">
                       Ver juego
