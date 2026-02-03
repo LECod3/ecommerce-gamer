@@ -128,3 +128,82 @@
   background: #dc3545;
   color: #fff;
 }
+
+.btn-add-game {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+  color: #ffffff;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-add-game:hover {
+  background-color: var(--hover-purple);
+  border-color: var(--hover-purple);
+  box-shadow: 0 0 15px var(--neon-purple);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.modal-admin .modal-content {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  border: 1px solid var(--primary-purple);
+  box-shadow: 0 0 20px rgba(106, 13, 173, 0.4);
+}
+
+.modal-admin .modal-header {
+  border-bottom: 1px solid var(--primary-purple);
+}
+
+.modal-admin .modal-footer {
+  border-top: 1px solid var(--primary-purple);
+}
+
+.modal-admin .form-control,
+.modal-admin .form-select {
+  background-color: var(--bg-color);
+  border: 1px solid var(--primary-purple);
+  color: var(--text-color);
+}
+
+.modal-admin .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.modal-admin .form-control:focus,
+.modal-admin .form-select:focus {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 5px var(--neon-purple);
+}
+
+.modal-admin .form-label {
+  color: #adb5bd;
+}
+
+.modal-admin .btn-primary {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+}
+
+.modal-admin .btn-primary:hover {
+  background-color: var(--hover-purple);
+  border-color: var(--hover-purple);
+}
+
+.modal-admin .btn-secondary {
+  background-color: transparent;
+  border-color: #6c757d;
+  color: #adb5bd;
+}
+
+.modal-admin .btn-secondary:hover {
+  background-color: rgba(108, 117, 125, 0.1);
+  color: #fff;
+  border-color: #fff;
+}

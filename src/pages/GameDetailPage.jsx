@@ -20,7 +20,6 @@ const GameDetailPage = () => {
 
   return (
     <div className="container my-4">
-      <h1>Detalle del Juego</h1>
       {game && <MediaInfoSection game={game} />}
 
       <div className="row mt-5">

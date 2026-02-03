@@ -1,11 +1,26 @@
 import React, { useContext, useState } from "react";
-import { Container, Table, Button, Badge, Row, Col, Card, Modal, Form } from "react-bootstrap";
+import {
+  Container,
+  Table,
+  Button,
+  Badge,
+  Row,
+  Col,
+  Card,
+  Modal,
+  Form,
+} from "react-bootstrap";
 import { GamesContext } from "../context/gamescontext";
 import Pagination from "../components/Pagination.jsx";
 import "../styles/AdminPage.css";
 
 const AdminPage = () => {
   const { games, deleteGame, updateGame, addGame } = useContext(GamesContext);
+
+  const availableGameCategories = Array.from(
+    new Set(games.flatMap((game) => game.category)),
+  ).sort();
+
   const stockStatus = (stock) => {
     if (stock === 0) return { variant: "danger", text: "Sin Stock" };
     if (stock < 30) return { variant: "warning", text: "Bajo Stock" };
@@ -65,6 +80,7 @@ const AdminPage = () => {
       stock: "",
       image: "",
       category: "",
+      developer: "",
       description: "",
       rating: "",
       platform: "",
@@ -167,7 +183,12 @@ const AdminPage = () => {
         <Card.Body>
           <div className="d-flex justify-content-between align-items-center mb-3">
             <h4 className="mb-0">Listado de Juegos</h4>
-            <Button variant="primary" size="sm" onClick={openAddModal}>
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={openAddModal}
+              className="btn-add-game"
+            >
               Añadir nuevo juego
             </Button>
           </div>
@@ -268,7 +289,12 @@ const AdminPage = () => {
           />
         </Card.Body>
       </Card>
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+      <Modal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        centered
+        className="modal-admin"
+      >
         <Modal.Header closeButton>
           <Modal.Title>Editar Juego</Modal.Title>
         </Modal.Header>
@@ -287,6 +313,18 @@ const AdminPage = () => {
                 {errors.title && (
                   <small className="text-danger">{errors.title}</small>
                 )}
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label>URL de la Imagen</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="https://ejemplo.com/imagen.jpg"
+                  value={selectedGame.image}
+                  onChange={(e) =>
+                    setSelectedGame({ ...selectedGame, image: e.target.value })
+                  }
+                />
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -315,6 +353,43 @@ const AdminPage = () => {
                 {errors.stock && (
                   <small className="text-danger">{errors.stock}</small>
                 )}
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Desarrollador</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={selectedGame.developer || ""}
+                  onChange={(e) =>
+                    setSelectedGame({
+                      ...selectedGame,
+                      developer: e.target.value,
+                    })
+                  }
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label>Categoría</Form.Label>
+                <Form.Select
+                  value={
+                    Array.isArray(selectedGame.category)
+                      ? selectedGame.category[0]
+                      : selectedGame.category
+                  }
+                  onChange={(e) =>
+                    setSelectedGame({
+                      ...selectedGame,
+                      category: [e.target.value],
+                    })
+                  }
+                >
+                  <option value="">Seleccionar categoría</option>
+                  {availableGameCategories.map((categoryName) => (
+                    <option key={categoryName} value={categoryName}>
+                      {categoryName}
+                    </option>
+                  ))}
+                </Form.Select>
               </Form.Group>
             </Form>
           )}
