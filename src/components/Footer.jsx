@@ -1,9 +1,22 @@
 import { Container, Row, Col, Button, Nav, InputGroup, Form } from "react-bootstrap";
 import { FaFacebook, FaTwitter, FaLinkedin, FaDiscord, FaCcVisa, FaCcMastercard, FaPaypal, } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import "../styles/Footer.css";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = () => {
+    if (!email) {
+      alert("Por favor, ingresa un correo electrónico.")
+      return;
+    };
+
+    alert(`¡Gracias por suscribirte! 📩\nCorreo: ${email}`);
+    setEmail("");
+  };
+
   return (
     <footer className="footer-container mt-auto">
       <Container>
@@ -39,8 +52,10 @@ const Footer = () => {
                 placeholder="Escribe tu correo electrónico"
                 aria-label="Tu email"
                 className="footer-input"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <Button variant="outline-light" className="footer-subscribe-btn">
+              <Button variant="outline-light" className="footer-subscribe-btn" onClick={handleSubscribe}>
                 Suscribirse
               </Button>
             </InputGroup>
