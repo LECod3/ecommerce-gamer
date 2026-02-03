@@ -1,0 +1,41 @@
+.notfound-wrapper {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #12001f, #05010d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound-card {
+  width: 420px;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.notfound-image {
+  width: 100%;
+  display: block;
+}
+
+/* BASE OSCURA PARA BOTONES */
+.notfound-footer {
+  background: #0b061a;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* Botón principal acorde a tu paleta */
+.home-btn {
+  background: #d400ff;
+  border: none;
+  font-weight: 600;
+}
+
+.home-btn:hover {
+  background: #8f00ff;
+  box-shadow: 0 0 12px #d400ff;
+}
