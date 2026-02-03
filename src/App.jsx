@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import ModalLogin from "./components/ModalLogin";
 import ModalRegister from "./components/ModalRegister";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [showRegister, setShowRegister] = useState(false);
@@ -28,6 +29,7 @@ function App() {
   };
   return (
     <div className="d-flex flex-column min-vh-100">
+      <ScrollToTop />
       <Navbar
         onLoginClick={handleShowLogin}
         onRegisterClick={handleShowRegister}

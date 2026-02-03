@@ -6,8 +6,9 @@ import "../styles/FeaturedCarrusel.css";
 
 const FeaturedCarousel = ({ title, filterType }) => {
   const { games } = useContext(GamesContext);
+  /* 1. LÓGICA DEL FILTRO */
   const filteredGames = games.filter((game) => {
-    if (filterType === "sale") return game.onSale;
+    if (filterType === "sale") return game.onSale && game.discount;
     if (filterType === "new") return game.isNew;
     return false;
   });
@@ -45,8 +46,22 @@ const FeaturedCarousel = ({ title, filterType }) => {
                   <Card.Title className="fw-bold text-truncate">
                     {game.title}
                   </Card.Title>
-                  <Card.Text className="fw-bold text-success">
-                    ${game.price}
+                  {/* 2. LÓGICA DE PRECIO VISUAL (Fácil de entender) */}
+                  <Card.Text>
+                    {game.discount ? (
+                      <>
+                        <span className="text-muted text-decoration-line-through me-2">
+                          ${game.price}
+                        </span>
+                        <span className="text-success fw-bold">
+                          ${game.discount}
+                        </span>
+                      </>
+                    ) : (
+                      <span className="fw-bold text-success">
+                        ${game.price}
+                      </span>
+                    )}
                   </Card.Text>
                   <Link to={`/games/${game.code}`}>
                     <Button className="w-100 btn-custom" size="sm">
@@ -85,8 +100,22 @@ const FeaturedCarousel = ({ title, filterType }) => {
                     >
                       {game.title}
                     </Card.Title>
-                    <Card.Text className="fw-bold text-success">
-                      ${game.price}
+                    {/* LÓGICA DE PRECIO (Versión escritorio) */}
+                    <Card.Text>
+                      {game.discount ? (
+                        <>
+                          <span className="text-decoration-line-through me-2">
+                            ${game.price}
+                          </span>
+                          <span className="text-success fw-bold">
+                            ${game.discount}
+                          </span>
+                        </>
+                      ) : (
+                        <span className="fw-bold text-success">
+                          ${game.price}
+                        </span>
+                      )}
                     </Card.Text>
                     <Link to={`/games/${game.code}`}>
                       <Button className="w-100 btn-custom" size="sm">

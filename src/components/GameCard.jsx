@@ -5,7 +5,7 @@ import "../styles/GameCard.css";
 const GameCard = ({ game }) => {
   const { price, onSale, discount } = game;
 
-  const finalPrice = onSale ? (price - (price * discount) / 100).toFixed(2) : price.toFixed(2);
+  const finalPrice = onSale && discount ? discount : price;
 
   return (
     <Card className="h-100 shadow-sm border-0">
@@ -21,31 +21,27 @@ const GameCard = ({ game }) => {
           {game.description?.substring(0, 100)}...
         </Card.Text>
         <div className="price-container">
-          {onSale && (
-            <span className="discount-badge">
-              -{discount}%
-            </span>
-          )}
-          <div className="price-values">
-            {onSale && (
-              <span className="old-price">
-                ${price.toFixed(2)}
-              </span>
+          <div className="price-values d-flex align-items-center gap-2">
+            {onSale && discount && (
+              <span className="old-price">${price.toFixed(2)}</span>
             )}
             <span className="final-price">
-              ${finalPrice}
+              $
+              {typeof finalPrice === "number"
+                ? finalPrice.toFixed(2)
+                : finalPrice}
             </span>
           </div>
         </div>
 
-          <Button
-            as={Link}
-            to={`/games/${game.id}`}
-            className="btn-custom"
-            size="sm"
-          >
-            Ver detalles
-          </Button>
+        <Button
+          as={Link}
+          to={`/games/${game.code}`}
+          className="btn-custom"
+          size="sm"
+        >
+          Ver detalles
+        </Button>
       </Card.Body>
     </Card>
   );

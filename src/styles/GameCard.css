@@ -44,7 +44,7 @@
 
 .price-values {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   line-height: 1.1;
 }
 
@@ -60,3 +60,19 @@
   font-weight: 600;
 }
 
+/* Fix for uniform card heights */
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-text {
+  min-height: 3em; /* Ensures 2 lines minimum */
+  max-height: 3em; /* Limits to 2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .btn-custom {
+  margin-top: auto; /* Pushes button to bottom */
+}
