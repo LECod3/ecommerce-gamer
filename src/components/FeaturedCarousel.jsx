@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Carousel, Card, Button } from "react-bootstrap";
 import { GamesContext } from "../context/gamescontext";
+import "../styles/FeaturedCarrusel.css";
 
 const FeaturedCarousel = ({ title, filterType }) => {
   const { games } = useContext(GamesContext);
@@ -32,12 +33,12 @@ const FeaturedCarousel = ({ title, filterType }) => {
           <Carousel.Item key={game.id}>
             <div className="d-flex justify-content-center">
               <Card className="border-0 shadow-sm" style={{ width: "18rem" }}>
-                <Link to={`/game/${game.code}`}>
+                <Link to={`/games/${game.code}`}>
                   <Card.Img
                     variant="top"
                     src={game.image}
                     alt={game.title}
-                    style={{ height: "200px", objectFit: "cover" }}
+                    className="featured-card-img-mobile"
                   />
                 </Link>
                 <Card.Body>
@@ -47,8 +48,8 @@ const FeaturedCarousel = ({ title, filterType }) => {
                   <Card.Text className="fw-bold text-success">
                     ${game.price}
                   </Card.Text>
-                  <Link to={`/game/${game.code}`}>
-                    <Button variant="primary" size="sm" className="w-100">
+                  <Link to={`/games/${game.code}`}>
+                    <Button className="w-100 btn-custom" size="sm">
                       Ver juego
                     </Button>
                   </Link>
@@ -69,12 +70,12 @@ const FeaturedCarousel = ({ title, filterType }) => {
                   className="border-0 shadow-sm"
                   style={{ width: "16rem" }}
                 >
-                  <Link to={`/game/${game.code}`}>
+                  <Link to={`/games/${game.code}`}>
                     <Card.Img
                       variant="top"
                       src={game.image}
                       alt={game.title}
-                      style={{ height: "180px", objectFit: "cover" }}
+                      className="featured-card-img-desktop"
                     />
                   </Link>
                   <Card.Body>
@@ -87,8 +88,8 @@ const FeaturedCarousel = ({ title, filterType }) => {
                     <Card.Text className="fw-bold text-success">
                       ${game.price}
                     </Card.Text>
-                    <Link to={`/game/${game.code}`}>
-                      <Button variant="primary" size="sm" className="w-100">
+                    <Link to={`/games/${game.code}`}>
+                      <Button className="w-100 btn-custom" size="sm">
                         Ver juego
                       </Button>
                     </Link>

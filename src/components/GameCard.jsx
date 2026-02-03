@@ -1,5 +1,6 @@
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../styles/GameCard.css";
 
 const GameCard = ({ game }) => {
   return (
@@ -8,7 +9,7 @@ const GameCard = ({ game }) => {
         variant="top"
         src={game.image}
         alt={game.title}
-        style={{ height: "200px", objectFit: "cover" }}
+        className="game-card-img"
       />
       <Card.Body className="d-flex flex-column">
         <Card.Title className="fw-bold">{game.title}</Card.Title>
@@ -19,8 +20,8 @@ const GameCard = ({ game }) => {
           <h5 className="mb-0 text-success fw-bold">${game.price}</h5>
           <Button
             as={Link}
-            to={`/game/${game.id}`}
-            variant="outline-primary"
+            to={`/games/${game.id}`}
+            className="btn-custom"
             size="sm"
           >
             Ver detalles

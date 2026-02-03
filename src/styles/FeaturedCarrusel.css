@@ -1,0 +1,31 @@
+.featured-card-img-mobile {
+  height: 200px;
+  object-fit: contain;
+}
+
+.featured-card-img-desktop {
+  height: 180px;
+  object-fit: contain;
+}
+
+.btn-custom {
+  background-color: #6a0dad;
+  border-color: #6a0dad;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #550a8a;
+  border-color: #550a8a;
+  color: white;
+  box-shadow: 0 0 10px rgba(85, 10, 138, 0.4);
+}
+
+.btn-custom:active,
+.btn-custom:focus {
+  background-color: #3d0763;
+  border-color: #3d0763;
+  box-shadow: 0 0 8px rgba(61, 7, 99, 0.6);
+  outline: none;
+}

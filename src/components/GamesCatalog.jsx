@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import GameCard from "./GameCard";
 import { GamesContext } from "../context/gamescontext.jsx";
 import Pagination from "./Pagination.jsx";
+import "../styles/GamesCatalog.css";
 
 const GamesCatalog = () => {
   const { games } = useContext(GamesContext);
@@ -40,11 +41,13 @@ const GamesCatalog = () => {
 
   return (
     <div className="container my-5">
-      <div className="mb-5 text-center">
+      <div className="mb-3 text-center">
         <h3>Todos los juegos</h3>
 
         <div className="d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center mt-4">
           <input
+            id="search-games"
+            name="search"
             type="text"
             className="form-control w-100 w-md-50"
             placeholder="Buscar juegos..."
@@ -57,6 +60,8 @@ const GamesCatalog = () => {
 
           <div className="d-flex gap-2 w-100 w-md-auto">
             <select
+              id="page-size-select"
+              name="pageSize"
               className="form-select"
               value={pageSize}
               onChange={(e) => {
@@ -70,8 +75,9 @@ const GamesCatalog = () => {
             </select>
 
             <select
-              className="form-select"
-              style={{ minWidth: "150px" }}
+              id="category-select"
+              name="category"
+              className="form-select category-select"
               value={category}
               onChange={(e) => {
                 setCategory(e.target.value);
