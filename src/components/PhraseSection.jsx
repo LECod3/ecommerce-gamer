@@ -1,4 +1,4 @@
-import "../styles/AboutUs.css";
+import "../styles/AboutSection.css";
 
 const PhraseSection = () => {
     return (

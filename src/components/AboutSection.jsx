@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import aboutUsLogo from "../assets/about-us-logo-cropped.webp";
-import "../styles/AboutUs.css";
+import "../styles/AboutSection.css";
 
 const AboutSection = () => {
 

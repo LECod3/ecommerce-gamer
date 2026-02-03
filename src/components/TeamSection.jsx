@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import TeamCard from "./TeamCard";
-import "../styles/AboutUs.css";
+import "../styles/AboutSection.css";
 
 const TeamSection = () => {
   return (
@@ -12,7 +12,7 @@ const TeamSection = () => {
           <Col md={4} sm={6}>
             <TeamCard
               name="Luciano Caro"
-              img="/img/team1.jpg"
+              img="https://i.postimg.cc/0Ntzz3Zf/me.webp"
               text="Desarrollador"
             />
           </Col>
