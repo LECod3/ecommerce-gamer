@@ -25,3 +25,38 @@
   outline: none;
   color: white;
 }
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.discount-badge {
+  background-color: #6f2cf4;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.price-values {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.final-price {
+  color: #2ecc71;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+

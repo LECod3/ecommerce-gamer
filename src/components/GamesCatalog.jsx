@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import { Button } from "react-bootstrap";
 import GameCard from "./GameCard";
 import { GamesContext } from "../context/gamescontext.jsx";
 import Pagination from "./Pagination.jsx";
@@ -9,6 +10,7 @@ const GamesCatalog = () => {
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
+  const [priceOrder, setPriceOrder] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(4);
@@ -17,6 +19,11 @@ const GamesCatalog = () => {
     "all",
     ...new Set(games.flatMap((game) => game.category)),
   ].sort();
+
+  const togglePriceOrder = () => {
+    setPriceOrder((prev) => prev === null ? "asc" : prev === "asc" ? "desc" : null);
+    setCurrentPage(1);
+  };
 
   const filteredGames = games.filter((game) => {
     const matchTitle = game.title.toLowerCase().includes(search.toLowerCase());
@@ -28,6 +35,11 @@ const GamesCatalog = () => {
         : game.category === category);
 
     return matchTitle && matchCategory;
+  })
+  .sort((a, b) => {
+    if (priceOrder === "asc") return a.price - b.price;
+    if (priceOrder === "desc") return b.price - a.price;
+    return 0;
   });
 
   const totalPages = Math.ceil(filteredGames.length / pageSize);
@@ -90,6 +102,12 @@ const GamesCatalog = () => {
                 </option>
               ))}
             </select>
+
+            <button className="btn btn-outline-light price-sort-btn ${priceOrder ? 'active' : ''}" onClick={togglePriceOrder} title="Ordenar por precio">
+              💲
+              {priceOrder === "asc" && "↑"}
+              {priceOrder === "desc" && "↓"}
+            </button>
           </div>
         </div>
       </div>

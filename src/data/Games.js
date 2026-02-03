@@ -73,6 +73,7 @@ export const initialGames = [
     },
     highlighted: false,
     onSale: true,
+    discount: 25,
     isNew: true,
     reviews: [],
   },
