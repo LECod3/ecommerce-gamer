@@ -5,6 +5,11 @@
   --text-color: #ffffff;
   --secondary-bg: #1e1e1e;
   --accent-color: #0d6efd;
+  --primary-purple: #6a0dad;
+  --hover-purple: #550a8a;
+  --active-purple: #3d0763;
+  --neon-purple: #d05ce3;
+  --bg-gradient-dark: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
 }
 
 body {

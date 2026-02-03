@@ -1,5 +1,5 @@
 .footer-container {
-  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+  background: var(--bg-gradient-dark);
   border-top: 1px solid #333;
   color: #e0e0e0;
   padding-top: 3rem;
@@ -8,7 +8,7 @@
 
 .footer-title {
   font-family: "Chakra Petch", sans-serif;
-  color: #d05ce3;
+  color: var(--neon-purple);
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 700;
@@ -26,7 +26,7 @@
 }
 
 .footer-link:hover {
-  color: #d05ce3;
+  color: var(--neon-purple);
   padding-left: 5px;
   text-decoration: none;
 }
@@ -44,21 +44,21 @@
 
 .footer-input:focus {
   background-color: #2a2a2a;
-  border-color: #6a0dad;
+  border-color: var(--primary-purple);
   box-shadow: 0 0 8px rgba(106, 13, 173, 0.4);
   color: white;
 }
 
 .footer-subscribe-btn {
-  border-color: #6a0dad;
-  color: #d05ce3;
+  border-color: var(--primary-purple);
+  color: var(--neon-purple);
   transition: all 0.3s ease;
 }
 
 .footer-subscribe-btn:hover {
-  background-color: #6a0dad;
+  background-color: var(--primary-purple);
   color: white;
-  border-color: #6a0dad;
+  border-color: var(--primary-purple);
   box-shadow: 0 0 10px rgba(106, 13, 173, 0.4);
 }
 
@@ -72,7 +72,7 @@
 }
 
 .social-icon:hover {
-  color: #d05ce3;
+  color: var(--neon-purple);
   transform: translateY(-3px);
   filter: drop-shadow(0 0 5px rgba(208, 92, 227, 0.6));
 }
@@ -88,7 +88,7 @@
 }
 
 .footer-download-btn {
-  background-color: #6a0dad;
+  background-color: var(--primary-purple);
   border: none;
   color: white;
   font-weight: 600;
@@ -97,7 +97,7 @@
 }
 
 .footer-download-btn:hover {
-  background-color: #550a8a;
+  background-color: var(--hover-purple);
   color: white;
   box-shadow: 0 0 15px rgba(106, 13, 173, 0.5);
 }

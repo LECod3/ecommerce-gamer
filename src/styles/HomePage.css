@@ -45,7 +45,7 @@ h3 {
 .home-container .form-control:focus,
 .home-container .form-select:focus {
   background-color: #252525;
-  border-color: #6a0dad;
+  border-color: var(--primary-purple);
   box-shadow: 0 0 10px rgba(106, 13, 173, 0.4);
 }
 
@@ -107,5 +107,3 @@ h3 {
 .carousel-control-next {
   right: -5%;
 }
-
-
