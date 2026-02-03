@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { AuthContext } from "../context/authcontext";
+import "../styles/Login.css";
 
 const ModalLogin = ({ show, handleClose, handleSwitchToRegister }) => {
   const { login } = useContext(AuthContext);
@@ -16,7 +17,7 @@ const ModalLogin = ({ show, handleClose, handleSwitchToRegister }) => {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} centered>
+    <Modal show={show} onHide={handleClose} centered className="modal-login">
       <Modal.Header closeButton className="border-0">
         <Modal.Title className="w-100 text-center">INICIAR SESIÓN</Modal.Title>
       </Modal.Header>

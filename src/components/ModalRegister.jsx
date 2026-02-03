@@ -1,10 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import "../styles/Register.css";
 
 const ModalRegister = ({ show, handleClose, handleSwitchToLogin }) => {
   return (
-    <Modal show={show} onHide={handleClose} centered>
+    <Modal show={show} onHide={handleClose} centered className="modal-register">
       <Modal.Header closeButton className="border-0">
         <Modal.Title className="w-100 text-center">REGISTRARSE</Modal.Title>
       </Modal.Header>

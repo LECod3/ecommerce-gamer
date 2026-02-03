@@ -1,0 +1,78 @@
+.modal-register .modal-content {
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  border: 1px solid var(--primary-purple);
+  box-shadow: 0 0 15px rgba(106, 13, 173, 0.3);
+}
+
+.modal-register .modal-header {
+  border-bottom: 1px solid var(--primary-purple);
+}
+
+.modal-register .modal-footer {
+  border-top: none;
+}
+
+.modal-register .form-control {
+  background-color: var(--bg-color);
+  border: 1px solid var(--primary-purple);
+  color: var(--text-color);
+}
+
+.modal-register .form-control::placeholder {
+  color: #b3b3b3;
+}
+
+.modal-register .form-control:focus {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 5px var(--neon-purple);
+}
+
+.modal-register .btn-success {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+  transition: all 0.3s ease;
+}
+
+.modal-register .btn-success:hover {
+  background-color: var(--hover-purple);
+  border-color: var(--hover-purple);
+  box-shadow: 0 0 10px var(--primary-purple);
+}
+
+.modal-register .btn-outline-secondary,
+.modal-register .btn-outline-primary {
+  color: var(--text-color);
+  border-color: var(--primary-purple);
+}
+
+.modal-register .btn-outline-secondary:hover,
+.modal-register .btn-outline-primary:hover {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+}
+
+.modal-register .text-muted,
+.modal-register .text-secondary {
+  color: #b3b3b3;
+}
+
+.modal-register a {
+  color: var(--neon-purple);
+}
+
+.modal-register a:hover {
+  color: #ffffff;
+}
+
+.modal-register .btn-link {
+  color: var(--neon-purple);
+}
+
+.modal-register .btn-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
