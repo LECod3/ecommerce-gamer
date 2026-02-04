@@ -178,6 +178,7 @@ Developed by:
 **Academic Institution:** [Rolling Code Academy](https://rollingcodeschool.com/)  
 **Commission:** w19 2025  
 **Professor:** Gonzalo Flamenci
+**Professor:** Matias Saade
 
 ---
 
